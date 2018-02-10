@@ -15,6 +15,11 @@ const ActionTypes = {
     GetLoginRequested: 'GET_LOGIN_REQUESTED',
     GetLoginRejected: 'GET_LOGIN_REJECTED',
     GetLoginFulfilled: 'GET_LOGIN_FULFILLED',
+
+    GetUsers:   'GET_USERS',
+    GetUsersRequested: 'GET_USERS_REQUESTED',
+    GetUsersRejected: 'GET_USERS_REJECTED',
+    GetUsersFulfilled: 'GET_USERS_FULFILLED',
 };
 
 export default ActionTypes;
