@@ -1,20 +1,42 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
+// import Definitions from '../Definitions/Definitions';
 
 class AdminIndex extends Component {
+    componentDidMount() {
+        // Update page title
+        document.title = 'Liberation by Design - Admin'
+    }
+
+    renderComponentToDisplay() {
+        var componentName = document.URL.split('admin/')[1];
+        switch (componentName) {
+            case 'definitions':
+                // return <Definitions />
+                return <div>Definitions yo</div>
+            case 'questions':
+                // return <Questions />
+                return <div>Questions yo</div>
+            case 'users':
+                // return <Users />
+                return <div>Users yo</div>
+        }
+    }
 
     render() {
         return (
-            <nav className="nav">
-                <ul>
-                    <li><NavLink exact to="/admin/definitions" activeClassName="active">Definitions</NavLink></li>
-                    <li><NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink></li>
-                    <li><NavLink exact to="/admin/users" activeClassName="active">Users</NavLink></li>
-                </ul>
-            </nav>
+            <div className="page-container">
+                    <nav>
+                        <NavLink exact to="/admin/definitions" ClassName="active">Definitions</NavLink>
+                        <NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink>
+                        <NavLink exact to="/admin/users" activeClassName="active">Users</NavLink>
+                    </nav>
 
-            // Show component based on url
+                <div className="list-container">
+                    {this.renderComponentToDisplay()}
+                </div>
+            </div>
         )
     }
 }
