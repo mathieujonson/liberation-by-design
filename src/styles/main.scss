@@ -11,7 +11,10 @@
 
 /* Pages */
 @import './pages/home';
+@import './pages/how-to-play';
+@import './pages/our-definitions';
 
+/* Generic Site-Wide Styles*/
 body {
   font-family: 'Poppins', system-ui, sans-serif;
   background-color:$backgroundColor;
@@ -44,17 +47,17 @@ label {
   margin-bottom:10px;
 }
 
-button {
+button, a.button {
   display:block;
-  width:100%;
   background-color:#000;
   color:#fff;
   border:0;
   padding:1em;
   letter-spacing:1px;
   font-size:1em;
-  max-width:400px;
   margin:0 auto;
+  width:200px;
+  text-decoration:none;
 }
 
 input {

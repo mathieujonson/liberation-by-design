@@ -23,4 +23,9 @@ Clone and install the repo.  Navigate to the directory where you want the projec
   
   `firebase deploy`
 
-###
+### Organization
+
+- `App.js`:     main entry point to the app, and it contains all of our routes.  If you're creating a new "page", you'll want to create and import the new component, and add a route to it.
+- `main.scss`:  main SASS file, but mostly imports other style sheets.  Generic site-wide styles go here, otherwise create a `partial` or `page` SASS file and import it here.
+- `components`: directory holding all components.  Each "page" should have its own directory within this folder component, with child components grouped in that folder.  Any components that can be shared between pages should go in the "Shared" directory.
+
