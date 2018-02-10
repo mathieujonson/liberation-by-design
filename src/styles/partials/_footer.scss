@@ -5,20 +5,6 @@
   bottom:0;
   left:0;
   right:0;
-  border-top:1px solid #fff;
-  a {
-    flex-grow:1;
-    text-align:center;
-    padding:.5em;
-    border-right:1px solid #dedede;
-    &:last-child {
-      border-right:0;
-    }
-    i {
-      font-size:1.5em;
-    }
-    &.active i {
-      text-decoration:underline;
-    }
-  }
+  padding:30px;
+  border-top:1px solid #000;
 }

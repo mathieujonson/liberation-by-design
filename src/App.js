@@ -6,6 +6,7 @@ import HowToPlay from './components/HowToPlay/HowToPlay'
 import Definitions from './components/Definitions/Definitions'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
+import './styles/main.css'
 
 class App extends Component {
     render() {

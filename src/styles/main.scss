@@ -1,11 +1,19 @@
+/* Variables */
 @import './variables/variables';
+
+/* Fonts */
 @import './fonts/system';
+
+/* Partials */
 @import './partials/reset';
 @import './partials/header';
 @import './partials/footer';
 
+/* Pages */
+@import './pages/home';
+
 body {
-  font-family:system-ui;
+  font-family: 'Poppins', system-ui, sans-serif;
   background-color:$backgroundColor;
   color:$fontColor;
   padding-bottom:40px;
@@ -15,15 +23,18 @@ body {
   padding:20px;
 }
 
+h1 {
+  font-size:1.5em;
+  font-weight:bold;
+  margin-bottom:20px;
+}
 h2 {
-  text-align:center;
   font-size:1.25em;
   font-weight:bold;
   margin-bottom:20px;
 }
 
 p {
-  text-align:center;
   line-height:1.5;
   margin-bottom:20px;
 }
@@ -44,7 +55,6 @@ button {
   font-size:1em;
   max-width:400px;
   margin:0 auto;
-
 }
 
 input {

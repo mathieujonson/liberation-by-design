@@ -1,9 +1,10 @@
 .page-header {
-  padding:.5em 1em;
-}
-h1 {
-  font-size:1.5em;
-  a{
-    text-decoration:none;
+  padding:1.25em;
+  border-bottom:1px solid #000;
+  h1 {
+    margin-bottom:0;
+    a {
+      text-decoration:none;
+    }
   }
 }

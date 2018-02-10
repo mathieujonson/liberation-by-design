@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "firebase": "^4.3.0",
-    "json-server": "^0.10.1",
     "node": "^8.3.0",
     "node-sass-chokidar": "^0.0.3",
     "react": "^15.5.4",
