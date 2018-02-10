@@ -1,10 +1,26 @@
 .page-header {
+  display:flex;
+  justify-content:space-between;
   padding:1.25em;
   border-bottom:1px solid #000;
   h1 {
     margin-bottom:0;
     a {
       text-decoration:none;
+      padding:0;
+    }
+  }
+  nav {
+    display:flex;
+  }
+  a {
+    display:flex;
+    align-items:center;
+    padding:0 1.25em;
+    text-decoration:none;
+    &.active {
+      font-weight:bold;
+      text-decoration:underline;
     }
   }
 }
