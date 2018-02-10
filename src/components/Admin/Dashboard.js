@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import AdminDefinitions from '../Definitions/Definitions';
 
-class AdminIndex extends Component {
+class Dashboard extends Component {
     // constructor(props) {
     //     super(props);
     
@@ -67,4 +67,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
