@@ -22,6 +22,8 @@ class Definitions extends Component {
             })
         }
 
+        console.log(list)
+
         return (
             <div className="our-definitions-container">
                 <h1>Our Definitions</h1>
@@ -37,7 +39,8 @@ class Definitions extends Component {
 function mapStateToProps(state) {
     return {
         definitions: state.definitions,
-        state: state
+        state: state,
+        inProgress: state.definitions.inProgress
     };
 }
 
