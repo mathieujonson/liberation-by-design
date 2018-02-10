@@ -4,7 +4,7 @@ import {database} from './database';
 export function getQuestions() {
     return dispatch => {
         dispatch(getQuestionsRequestedAction());
-        return database.ref(`/questions`).once('value', snap => {
+        return database.ref(`/definitions`).once('value', snap => {
             const questions = snap.val();
             dispatch(getQuestionsFulfilledAction(questions))
         }).catch((error) => {

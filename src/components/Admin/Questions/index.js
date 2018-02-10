@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../actions/definitions';
+import {getQuestions} from '../../actions/questions';
 
 
-class Definitions extends Component {
+class Questions extends Component {
     componentWillMount() {
-        this.props.getDefinitions()
-        document.title = 'Our Definitions - Liberation By Design'
+        this.props.getQuestions()
+        document.title = 'Questions - Admin'
 
     }
 
     render() {
         let list = ''
 
-        if(Object.keys(this.props.definitions).length > 0) {
+        if(Object.keys(this.props.questions).length > 0) {
             list = this.props.definitions.definitions.map((definition, index) => {
                 return (
                     <li key={index}><strong>{definition.term}</strong>: {definition.definition}</li>
@@ -22,15 +22,11 @@ class Definitions extends Component {
             })
         }
 
-        console.log(list)
-
         return (
             <div className="our-definitions-container">
-                <h1>Our Definitions</h1>
-                <ul>
-                    {list}
-                </ul>
-                <Link to='/play' className="button">Let's Play!</Link>
+                <table>
+                    <tr><td></td></tr>
+                </table>
             </div>
         )
     }
@@ -38,16 +34,14 @@ class Definitions extends Component {
 
 function mapStateToProps(state) {
     return {
-        definitions: state.definitions,
-        state: state,
-        inProgress: state.definitions.inProgress
+        questions: state.state,
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getDefinitions: () => dispatch(getDefinitions())
+        getQuestions: () => dispatch(getQuestions())
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Definitions);
+export default connect(mapStateToProps, mapDispatchToProps)(Questions);
