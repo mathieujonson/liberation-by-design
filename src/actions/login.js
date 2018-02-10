@@ -30,9 +30,8 @@ function getLoginRejectedAction() {
 }
 
 function getLoginFulfilledAction(login) {
-    console.log("action hit", login)
     return {
         type: ActionTypes.GetLoginFulfilled,
-        ...login
+        login
     }
 }
