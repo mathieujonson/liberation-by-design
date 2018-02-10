@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 class HowToPlay extends Component {
-  componentDidMount() {
+  componentWillMount() {
       document.title = 'How To Play - Liberation By Design'
   }
 

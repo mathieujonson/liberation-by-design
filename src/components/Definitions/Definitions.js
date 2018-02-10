@@ -7,10 +7,8 @@ import {getDefinitions} from '../../actions/definitions';
 class Definitions extends Component {
     componentWillMount() {
         this.props.getDefinitions()
-    }
-
-    componentDidMount() {
         document.title = 'Our Definitions - Liberation By Design'
+
     }
 
     render() {

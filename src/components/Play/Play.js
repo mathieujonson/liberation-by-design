@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Questions from './Questions.js'
 
 class Play extends Component {
-  componentDidMount() {
+  componentWillMount() {
       document.title = 'Play - Liberation By Design'
   }
 
