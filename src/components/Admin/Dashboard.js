@@ -2,26 +2,28 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import AdminDefinitions from '../Definitions/Definitions';
+import Definitions from './Definitions/Definitions';
 
 class Dashboard extends Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
     
-    //     this.state = {
-    //       displayComponent: "definitions"
-    //     };
-    // }
+        this.state = {
+          displayComponent: "definitions"
+        };
+        console.log(this.state.displayComponent)
+    }
 
     componentDidMount() {
-        // Update page title
         document.title = 'Admin - Liberation by Design'
     }
     
-    renderComponent() {
-        // const displayComponent = props.dislayComponent
-        const view = 'definitions'
+    renderComponent(displayComponent) {
+        // const displayComponent = this.props.dislayComponent
+        console.log(displayComponent);
+        // const view = 'definitions'
 
-        switch (view) {
+        switch (displayComponent) {
             case 'definitions':
                 // return <AdminDefinitions />
                 return <div>Defs yo</div>
@@ -34,10 +36,6 @@ class Dashboard extends Component {
         }
     }
 
-    handleNav(componentToDisplay) {
-        // this.setState({displayComponent: componentToDisplay})
-    }
-
     render() {
         return (
             <div className="page-container">
@@ -48,7 +46,7 @@ class Dashboard extends Component {
                     </nav>
 
                 <div className="list-container">
-                    {this.renderComponent()}
+                    {this.renderComponent(this.props.dislayComponent)}
                 </div>
             </div>
         )
@@ -57,7 +55,8 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     return {
-        // displayComponent: state.displayComponent
+        displayComponent: state.displayComponent,
+        state: state
     };
 }
 
