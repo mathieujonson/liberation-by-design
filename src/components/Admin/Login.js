@@ -18,14 +18,15 @@ class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-  handleChange = event => {
+  handleChange = event => {    
     this.setState({
       [event.target.id]: event.target.value
     });
   }
 
   handleSubmit = event => {
-    this.props.getLogin(this.state.email, this.state.password)    
+    event.preventDefault()    
+    var authSuccess = this.props.getLogin(this.state.email, this.state.password)       
   }
 
   render() {
@@ -72,7 +73,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      getLogin: () => dispatch(getLogin())
+      getLogin: (email, password) => dispatch(getLogin(email, password))
   };
 }
 

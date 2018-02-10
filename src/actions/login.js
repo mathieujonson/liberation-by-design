@@ -1,22 +1,19 @@
 import ActionTypes from '../action-types';
 import {auth} from './database';
 
-export function getLogin() {
-    return dispatch => {
-        dispatch(getLoginRequestedAction());
-        return auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-            .catch((error) => {
+export function getLogin(email, password) {    
+    return dispatch => {       
+        dispatch(getLoginRequestedAction())
+        return auth.signInWithEmailAndPassword(email, password)
+        .then((user) => {
+            console.log(user)
+            dispatch(getLoginFulfilledAction(user))
+        })
+            .catch((error) => {                
                 console.log(error);
+                console.log(error.code);
                 dispatch(getLoginRejectedAction());
             });
-            console.log("blah")
-            auth().onAuthStateChange((user) => {
-                if (user) {
-                    dispatch(getLoginFulfilledAction(user));
-                    console.log(user)
-                }
-            })
-        
     }
 }
 
