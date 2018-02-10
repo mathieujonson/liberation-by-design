@@ -10,7 +10,7 @@ export default (props) => (
           <NavLink exact to='/' activeClassName="active">Home</NavLink>
           <NavLink exact to='/how-to-play' activeClassName="active">How To Play</NavLink>
           <NavLink exact to='/our-definitions' activeClassName="active">Our Definitions</NavLink>
-          <NavLink exact to='/play' activeClassName="active">Play</NavLink>
+          <NavLink exact to='/play' activeClassName="active">Play</NavLink>          
       </nav>
   </header>
 )

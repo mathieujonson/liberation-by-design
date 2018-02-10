@@ -6,14 +6,14 @@ export function getLogin(email, password) {
         dispatch(getLoginRequestedAction())
         return auth.signInWithEmailAndPassword(email, password)
         .then((user) => {
-            console.log(user)
-            dispatch(getLoginFulfilledAction(user))
+            console.log("user",user)
+            return dispatch(getLoginFulfilledAction(user))
         })
-            .catch((error) => {                
-                console.log(error);
-                console.log(error.code);
-                dispatch(getLoginRejectedAction());
-            });
+        .catch((error) => {
+            console.log(error);
+            console.log(error.code);
+            dispatch(getLoginRejectedAction());
+        });
     }
 }
 
@@ -30,8 +30,9 @@ function getLoginRejectedAction() {
 }
 
 function getLoginFulfilledAction(login) {
+    console.log("action hit", login)
     return {
         type: ActionTypes.GetLoginFulfilled,
-        login
+        ...login
     }
 }
