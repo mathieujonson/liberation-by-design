@@ -2,48 +2,34 @@
 import ActionTypes from '../action-types';
 import database from './database';
 
-export function getWord(key) {
+export function getDefinitions() {
     return dispatch => {
-        dispatch(getWordRequestedAction());
-        return database.ref(`/word-list/${key}`).once('value', snap => {
-            const word = snap.val();
-            dispatch(getWordFulfilledAction(word))
+        dispatch(getDefinitionsRequestedAction());
+        return database.ref(`/definitions`).once('value', snap => {
+            const definitions = snap.val();
+            dispatch(getDefinitionsFulfilledAction(definitions))
         }).catch((error) => {
             console.log(error);
-            dispatch(getWordRejectedAction());
+            dispatch(getDefinitionsRejectedAction());
         });
     }
 }
 
-export function guessLetter(letter) {
+function getDefinitionsRequestedAction() {
     return {
-        type: ActionTypes.SingleGuessLetter,
-        letter
+        type: ActionTypes.GetDefinitionsRequested
     }
 }
 
-export function updateStep(step) {
+function getDefinitionsRejectedAction() {
     return {
-        type: ActionTypes.SingleUpdateStep,
-        step
+        type: ActionTypes.GetDefinitionsRejected
     }
 }
 
-function getWordRequestedAction() {
+function getDefinitionsFulfilledAction(definitions) {
     return {
-        type: ActionTypes.GetWordRequested
-    }
-}
-
-function getWordRejectedAction() {
-    return {
-        type: ActionTypes.GetWordRejected
-    }
-}
-
-function getWordFulfilledAction(word) {
-    return {
-        type: ActionTypes.GetWordFulfilled,
-        word
+        type: ActionTypes.GetDefinitionsFulfilled,
+        definitions
     }
 }

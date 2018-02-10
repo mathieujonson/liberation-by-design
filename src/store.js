@@ -7,7 +7,6 @@ const logger = createLogger();
 
 const store = createStore(rootReducer,
     {
-        questions: [],
         definitions: []
     },
     applyMiddleware(thunk, logger)

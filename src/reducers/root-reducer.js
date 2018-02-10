@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import { singlePlayer } from './single-player'
+import { definitions } from './definitions'
 import flashMessage from './flash-message'
 
 const rootReducer = combineReducers({
-    singlePlayer: singlePlayer,
+    definitions:  definitions,
     flashMessage: flashMessage
 });
 
