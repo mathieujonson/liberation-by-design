@@ -1,0 +1,55 @@
+@import './variables/variables';
+@import './fonts/system';
+@import './partials/reset';
+@import './partials/header';
+@import './partials/footer';
+
+body {
+  font-family:system-ui;
+  background-color:$backgroundColor;
+  color:$fontColor;
+  padding-bottom:40px;
+}
+
+.content-container {
+  padding:20px;
+}
+
+h2 {
+  text-align:center;
+  font-size:1.25em;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+p {
+  text-align:center;
+  line-height:1.5;
+  margin-bottom:20px;
+}
+
+label {
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+button {
+  display:block;
+  width:100%;
+  background-color:#000;
+  color:#fff;
+  border:0;
+  padding:1em;
+  letter-spacing:1px;
+  font-size:1em;
+  max-width:400px;
+  margin:0 auto;
+
+}
+
+input {
+  display:block;
+  width:100%;
+  padding:1em;
+  font-size:1em;
+}

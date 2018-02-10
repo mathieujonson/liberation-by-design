@@ -1,0 +1,1 @@
+** This directory is left over from the skeleton that started the app.  Delete as soon as comparable examples are in place.
