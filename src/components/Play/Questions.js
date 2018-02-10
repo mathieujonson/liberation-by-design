@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../actions/questions';
+import {getQuestions} from '../../actions/questions'
 
 
 class Questions extends Component {
@@ -14,25 +14,27 @@ class Questions extends Component {
     }
 
     render() {
-        let list = ''
+        // let list = ''
+        let questionMarkup = ''
 
         if(Object.keys(this.props.questions).length > 0) {
-            list = this.props.questions.questions.map((question, index) => {
-                return (
-                    <li key={index}><strong>{question.term}</strong>: {question.question}</li>
-                )
-            })
+            let question = this.props.questions.questions[1] 
+            console.log('*******', question)
+            // list = this.props.questions.questions.map((question, index) => {
+                // return (
+            questionMarkup = <li><strong>{question.term}</strong>{question.question}</li>
+                // )
+            // })
         }
 
-        console.log(list)
+        // console.log(list)
 
         return (
             <div className="our-questions-container">
-                <h1>Our Questions</h1>
                 <ul>
-                    {list}
+                    {questionMarkup}
                 </ul>
-                <Link to='/play' className="button">Let's Play!</Link>
+                <Link to='/play' className="button">Submit</Link>
             </div>
         )
     }
