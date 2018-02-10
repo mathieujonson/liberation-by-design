@@ -1,5 +1,5 @@
 import ActionTypes from '../action-types';
-import database from './database';
+import {database} from './database';
 
 export function getDefinitions() {
     return dispatch => {
