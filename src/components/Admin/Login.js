@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from 'react-redux'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
+import {getLogin} from '../../actions/login'
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +25,7 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    this.props.getLogin(this.state.email, this.state.password)    
   }
 
   render() {
@@ -61,3 +62,18 @@ export default class Login extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+      login: state.login,
+      state: state
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+      getLogin: () => dispatch(getLogin())
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
