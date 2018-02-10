@@ -5,9 +5,9 @@ import { login } from './login'
 import flashMessage from './flash-message'
 
 const rootReducer = combineReducers({
-    definitions: definitions,
-    questions:   questions,
-    login:       login,
+    definitions:  definitions,
+    questions:  questions,
+    login: login,
     flashMessage: flashMessage
 });
 

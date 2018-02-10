@@ -8,8 +8,8 @@ import {getLogin} from '../../actions/login'
 
 class Index extends Component {
   
-    render() {
-        const markup = this.props.login ? <Dashboard /> : <Login />
+    render() {        
+        const markup = Object.keys(this.props.login).length > 0 ? <Dashboard /> : <Login />
         
         return (
             <div>
