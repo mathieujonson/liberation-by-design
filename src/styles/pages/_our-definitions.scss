@@ -2,5 +2,10 @@
   display:flex;
   flex-direction:column;
   justify-content:center;
-  text-align:center;
+  li {
+    margin-bottom:1.25em;
+  }
+  strong {
+    font-weight:bold;
+  }
 }

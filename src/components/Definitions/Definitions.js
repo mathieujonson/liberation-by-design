@@ -14,26 +14,19 @@ class Definitions extends Component {
     }
 
     render() {
-        console.log("state", this.props.state)
-        console.log("we have definitions!", this.props.definitions)
-
         let list = ''
 
-        if(this.props.definitions.length) {
-
-            list = this.props.definitions.definitions.map((definition) => {
-                console.log("mapping",definition)
+        if(Object.keys(this.props.definitions).length > 0) {
+            list = this.props.definitions.definitions.map((definition, index) => {
                 return (
-                    <li>{definition}</li>
+                    <li key={index}><strong>{definition.term}</strong>: {definition.definition}</li>
                 )
             })
-            console.log(list);
         }
 
         return (
             <div className="our-definitions-container">
                 <h1>Our Definitions</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare ex in turpis tempor tincidunt. Nulla at nisl eleifend, congue dui ut, blandit tellus. Maecenas ullamcorper mauris a arcu pellentesque, nec facilisis nibh volutpat. Quisque a nibh vel dui porttitor mollis eu in tortor. Quisque sed libero semper elit scelerisque facilisis. Quisque iaculis mauris pellentesque elit commodo, et sollicitudin eros auctor. Nullam velit dolor, ultrices ac ante eget, fermentum volutpat odio.</p>
                 <ul>
                     {list}
                 </ul>
