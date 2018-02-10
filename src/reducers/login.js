@@ -17,7 +17,6 @@ export function login(state = {}, action) {
         }
         case ActionTypes.GetLoginFulfilled: {
             const login = action.login
-            console.log("blah",login)
             return Object.assign({}, state, {
                 inProgress: false,
                 success: 'Got login.',
@@ -25,7 +24,6 @@ export function login(state = {}, action) {
             })
         }
         default:
-        console.log("default")
             return state;
     }
 }

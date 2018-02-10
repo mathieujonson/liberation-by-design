@@ -9,6 +9,7 @@ import AdminIndex from './components/Admin/Index'
 //import Login from './components/Admin/Login'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
+import AdminQuestions from './components/Admin/Questions/index'
 import Dashboard from './components/Admin/Dashboard'
 import AdminDefinitions from './components/Admin/Definitions/Definitions'
 import './styles/main.css'
@@ -27,6 +28,7 @@ class App extends Component {
                             <Route path="/play" component={Play} />
                             <Route path="/admin/definitions" component={AdminDefinitions} />
                             <Route path="/admin/dashboard" component={Dashboard} />
+                            <Route path="/admin/questions" component={AdminQuestions} />
                             <Route path="/admin" component={AdminIndex} />
                             <Route component={NotFound} />
                         </Switch>

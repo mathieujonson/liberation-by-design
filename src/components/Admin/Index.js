@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Login from './Login'
 import Dashboard from './Dashboard'
-import { Route, Redirect } from 'react-router'
+import { Route } from 'react-router'
 import {getLogin} from '../../actions/login'
 
 
@@ -13,7 +13,7 @@ class Index extends Component {
         
         return (
             <div>
-            {markup}
+                {markup}
             </div>
         );
     }  
