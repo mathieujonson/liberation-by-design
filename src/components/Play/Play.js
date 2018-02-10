@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 class Play extends Component {
-  componentDidMount() {
+  componentWillMount() {
       document.title = 'Play - Liberation By Design'
   }
 
