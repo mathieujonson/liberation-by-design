@@ -23,11 +23,8 @@ class App extends Component {
                             <Route path="/how-to-play" component={HowToPlay} />
                             <Route path="/our-definitions" component={Definitions} />
                             <Route path="/play" component={Play} />
-<<<<<<< HEAD
                             <Route path="/admin/index" component={AdminIndex} />
-=======
                             <Route path="/admin" component={Login} />
->>>>>>> master
                             <Route component={NotFound} />
                         </Switch>
                     </div>
