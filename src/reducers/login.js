@@ -2,30 +2,29 @@ import ActionTypes from '../action-types';
 
 export function login(state = {}, action) {
     switch(action.type) {
-        case ActionTypes.GetLogin: {
+        case ActionTypes.GetLogin: {            
             return Object.assign({}, state, {
                 inProgress: true,
                 error: '',
                 success: '',
             });
         }
-        case ActionTypes.GetLoginRejected: {
+        case ActionTypes.GetLoginRejected: {            
             return Object.assign({}, state, {
                 inProgress: false,
                 error: 'Error in getting login.',
             });
         }
         case ActionTypes.GetLoginFulfilled: {
-            const login = action.login
-            console.log("blah",login)
+            console.log("blah")
+            const login = action.login            
             return Object.assign({}, state, {
                 inProgress: false,
                 success: 'Got login.',
                 login: login,
             })
         }
-        default:
-        console.log("default")
+        default:        
             return state;
     }
 }
