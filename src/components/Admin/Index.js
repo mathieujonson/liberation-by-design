@@ -2,14 +2,16 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 
-class Index extends Component {
+class AdminIndex extends Component {
 
     render() {
         return (
             <nav className="nav">
-                <NavLink exact to="/admin/definitions" activeClassName="active">Definitions</NavLink>
-                <NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink>
-                <NavLink exact to="/admin/users" activeClassName="active">Users</NavLink>
+                <ul>
+                    <li><NavLink exact to="/admin/definitions" activeClassName="active">Definitions</NavLink></li>
+                    <li><NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink></li>
+                    <li><NavLink exact to="/admin/users" activeClassName="active">Users</NavLink></li>
+                </ul>
             </nav>
 
             // Show component based on url
@@ -19,15 +21,15 @@ class Index extends Component {
 
 function mapStateToProps(state) {
     return {
-        definitions: state.definitions,
-        state: state
+        // definitions: state.definitions,
+        // state: state
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getDefinitions: () => dispatch(getDefinitions())
+        // getDefinitions: () => dispatch(getDefinitions())
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Definitions);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminIndex);
