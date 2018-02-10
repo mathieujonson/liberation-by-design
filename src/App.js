@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import HowToPlay from './components/HowToPlay/HowToPlay'
 import Definitions from './components/Definitions/Definitions'
 import Play from './components/Play/Play'
+import Login from './components/Admin/Login'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
 import './styles/main.css'
@@ -21,6 +22,7 @@ class App extends Component {
                             <Route path="/how-to-play" component={HowToPlay} />
                             <Route path="/our-definitions" component={Definitions} />
                             <Route path="/play" component={Play} />
+                            <Route path="/admin" component={Login} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
