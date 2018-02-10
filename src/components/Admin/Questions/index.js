@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../actions/questions';
+import {getQuestions} from '../../../actions/questions';
 
 
 class Questions extends Component {
@@ -11,21 +11,38 @@ class Questions extends Component {
 
     }
 
+    renderRow(question, index) {
+        return (
+            <tr key={index}>
+                <td>{question.question}</td>
+                <td><i className="material-icons">mode_edit</i></td>
+                <td><i className="material-icons">delete</i></td>
+            </tr>
+        )
+    }
+
     render() {
-        let list = ''
+        let rows = ''
 
         if(Object.keys(this.props.questions).length > 0) {
-            list = this.props.definitions.definitions.map((definition, index) => {
+            rows = this.props.questions.questions.map((question, index) => {
                 return (
-                    <li key={index}><strong>{definition.term}</strong>: {definition.definition}</li>
+                    this.renderRow(question, index)
                 )
             })
         }
 
         return (
-            <div className="our-definitions-container">
-                <table>
-                    <tr><td></td></tr>
+            <div className="our-definitions-container table-responsive">
+                <table className="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Question</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                        {rows}
+                    </tbody>
                 </table>
             </div>
         )
@@ -34,7 +51,7 @@ class Questions extends Component {
 
 function mapStateToProps(state) {
     return {
-        questions: state.state,
+        questions: state.questions,
     };
 }
 
