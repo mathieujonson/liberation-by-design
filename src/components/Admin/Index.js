@@ -1,20 +1,30 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
-// import Definitions from '../Definitions/Definitions';
+import AdminDefinitions from '../Definitions/Definitions';
 
 class AdminIndex extends Component {
+    // constructor(props) {
+    //     super(props);
+    
+    //     this.state = {
+    //       displayComponent: "definitions"
+    //     };
+    // }
+
     componentDidMount() {
         // Update page title
-        document.title = 'Liberation by Design - Admin'
+        document.title = 'Admin - Liberation by Design'
     }
+    
+    renderComponent() {
+        // const displayComponent = props.dislayComponent
+        const view = 'definitions'
 
-    renderComponentToDisplay() {
-        var componentName = document.URL.split('admin/')[1];
-        switch (componentName) {
+        switch (view) {
             case 'definitions':
-                // return <Definitions />
-                return <div>Definitions yo</div>
+                // return <AdminDefinitions />
+                return <div>Defs yo</div>
             case 'questions':
                 // return <Questions />
                 return <div>Questions yo</div>
@@ -24,17 +34,21 @@ class AdminIndex extends Component {
         }
     }
 
+    handleNav(componentToDisplay) {
+        // this.setState({displayComponent: componentToDisplay})
+    }
+
     render() {
         return (
             <div className="page-container">
                     <nav>
-                        <NavLink exact to="/admin/definitions" ClassName="active">Definitions</NavLink>
+                        <NavLink exact to="/admin/definitions" activeClassName="active">Definitions</NavLink>
                         <NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink>
                         <NavLink exact to="/admin/users" activeClassName="active">Users</NavLink>
                     </nav>
 
                 <div className="list-container">
-                    {this.renderComponentToDisplay()}
+                    {this.renderComponent()}
                 </div>
             </div>
         )
@@ -43,8 +57,7 @@ class AdminIndex extends Component {
 
 function mapStateToProps(state) {
     return {
-        // definitions: state.definitions,
-        // state: state
+        // displayComponent: state.displayComponent
     };
 }
 

@@ -9,6 +9,7 @@ import Login from './components/Admin/Login'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
 import AdminIndex from './components/Admin/Index'
+import AdminDefinitions from './components/Admin/Definitions/Definitions'
 import './styles/main.css'
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
                             <Route path="/our-definitions" component={Definitions} />
                             <Route path="/play" component={Play} />
                             <Route path="/admin/index" component={AdminIndex} />
+                            <Route path="/admin/definitions" component={AdminDefinitions} />
                             <Route path="/admin" component={Login} />
                             <Route component={NotFound} />
                         </Switch>
