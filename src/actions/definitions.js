@@ -1,4 +1,3 @@
-/* VESTIGE CODE, EXAMPLE PURPOSES ONLY */
 import ActionTypes from '../action-types';
 import {database} from './database';
 
