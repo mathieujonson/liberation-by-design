@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase'
 
 const config = {
     apiKey: "AIzaSyBtLzHokW3uT5sOc0FBQVLij1GkZpLM3dg",
@@ -7,9 +7,9 @@ const config = {
     projectId: "liberation-by-design",
     storageBucket: "liberation-by-design.appspot.com",
     messagingSenderId: "496878830254"
-};
+}
 
-firebase.initializeApp(config);
-const database = firebase.database();
+firebase.initializeApp(config)
 
-export default database;
+export const database = firebase.database()
+export const auth = firebase.auth()
