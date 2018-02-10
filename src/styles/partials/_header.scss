@@ -1,26 +1,119 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .page-header {
-  display:flex;
+  background-color: #fafafa;
+  display: flex;
   justify-content:space-between;
-  padding:1.25em;
-  border-bottom:1px solid #000;
-  h1 {
-    margin-bottom:0;
-    a {
-      text-decoration:none;
-      padding:0;
-    }
-  }
-  nav {
-    display:flex;
-  }
-  a {
-    display:flex;
-    align-items:center;
-    padding:0 1.25em;
-    text-decoration:none;
-    &.active {
-      font-weight:bold;
-      text-decoration:underline;
+  //padding:1.25em;
+  border-bottom: 1px solid rgba(0, 0, 0, .6);
+  width: 100%;
+  flex-direction: row;
+}
+
+@media(max-width:500px) {
+  .page-header {
+    flex-wrap:wrap;
+    .title, .buttons {
+      width: 100%;
     }
   }
 }
+
+//container for the logo and game title
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.logo-main {
+  margin: auto;
+  align-items: center;
+  display: inline-block;
+  //width: 30%;
+}
+
+.logo {
+  //display: inline-block;
+  //height: 45px;
+  //margin: 2em 0;
+  //width: 45px;
+
+  height: 85px;
+  padding: 10px;
+  width: 85px;
+  margin: 20px 10px;
+}
+
+//container for the nav buttons
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-end;
+}
+
+.buttons {
+  flex-direction: row;
+  //border: 2px solid;
+  //color: rgba(0, 0, 0, .6);
+  display:flex;
+  align-items:center;
+  //padding: 0 1.25em;
+  //text-decoration: none;
+  ////font-family: Poppins;
+  //font-weight: 600;
+  //font-style: normal;
+  //font-size: 14px;
+  //letter-spacing: .18em;
+  //text-transform: uppercase;
+  //&.active {
+  //  color: rgba(0, 0, 0, .6);
+  //  //text-decoration:underline;
+  //}
+}
+
+a:link {
+  text-decoration: none;
+  flex-direction: row;
+  color: white;
+  text-align: center;
+  display: inline-block;
+
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing:.18em;
+  text-transform: uppercase;
+
+  padding: 12px 18px;
+  border: 2px solid rgba(0, 0, 0, .6);
+  margin: 5px;
+}
+
+a:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, .6);
+  border-color: black;
+}
+
+//li {
+//  flex-direction: row;
+//  border: 2px solid rgba(0, 0, 0, .6);
+//  color: rgba(0, 0, 0, .6);
+//  padding: 5px;
+//  margin: 10px;
+//  font-family: futura-pt;
+//  font-weight: 600;
+//  font-style: normal;
+//  font-size: 11px;
+//  letter-spacing:.18em;
+//  text-transform: uppercase;
+//}
