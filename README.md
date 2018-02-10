@@ -1,17 +1,17 @@
 ## Liberation By Design
 ------
 
-###Getting Started
+## Getting Started
 
 To get started, make sure you have Firebase CLI installed:
   `npm install -g firebase-tools`
 
 
-###Common commands
+## Common commands
 
 - To get a local up and running:
 
-  `firebase serve`
+  `npm run dev`
 
 - To compile SASS:
 
