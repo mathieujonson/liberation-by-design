@@ -4,13 +4,13 @@ import {NavLink} from 'react-router-dom'
 import AdminDefinitions from '../Definitions/Definitions';
 
 class Dashboard extends Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
     
-    //     this.state = {
-    //       displayComponent: "definitions"
-    //     };
-    // }
+        this.state = {
+          displayComponent: "definitions"
+        };
+    }
 
     componentDidMount() {
         // Update page title
@@ -57,7 +57,8 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     return {
-        // displayComponent: state.displayComponent
+        displayComponent: state.displayComponent,
+        state: state
     };
 }
 
