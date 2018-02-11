@@ -10,8 +10,16 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-          <h1>Welcome to Liberation By Design!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare ex in turpis tempor tincidunt. Nulla at nisl eleifend, congue dui ut, blandit tellus. Maecenas ullamcorper mauris a arcu pellentesque, nec facilisis nibh volutpat. Quisque a nibh vel dui porttitor mollis eu in tortor. Quisque sed libero semper elit scelerisque facilisis. Quisque iaculis mauris pellentesque elit commodo, et sollicitudin eros auctor. Nullam velit dolor, ultrices ac ante eget, fermentum volutpat odio.</p>
+          <h1>LIBERATION BY DESIGN</h1>
+          <h3>An Interactive Game on the Case for Equity</h3>
+          <p>Liberation by Design is an interactive card game that explores the meaning of key terms surrounding the fight for equity. Each card provides real-world scenarios from which participants are able to discuss and explore the meaning of:</p>
+          <ul>
+              <li>Equity</li>
+              <li>Equality</li>
+              <li>Diversity</li>
+              <li>Inclusion</li>
+          </ul>
+          <p>Liberation by Design offers an invaluable opportunity to for students, educators and anyone interested in social justice to gain a deeper undestanding of the issues, as well as a safe space to share ideas to start dismantling the oppressive structures found in out society.</p>
           <Link to='/how-to-play' className="button">Get Started</Link>
       </div>
     )
