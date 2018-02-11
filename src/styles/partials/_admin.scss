@@ -1,0 +1,25 @@
+$gray: rgba(0,0,0,0.6);
+nav.admin-nav {
+    display: flex;
+    
+    a {
+        color: $gray;
+        border: 2px solid $gray;
+        padding: 15px 20px;
+        margin: 20px 10px;
+        text-decoration: none;
+
+        &.active {
+            background-color: $gray;
+            color: #fff;
+        }
+    }
+    a:first-of-type {
+        margin-left: 0;
+    }
+    a:hover {
+        background-color: $gray;
+        color: #fff;
+        border-color: #000;
+    }
+}

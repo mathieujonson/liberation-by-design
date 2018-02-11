@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {getQuestions} from '../../../actions/questions';
 import AdminNav from '../AdminNav'
 
@@ -8,26 +9,29 @@ class Questions extends Component {
     componentWillMount() {
         this.props.getQuestions()
         document.title = 'Questions - Admin'
+    }
 
+    handleClick(question, actionType = 'edit') {
+        console.log("question", question);
+        console.log("actionType", actionType)
     }
 
     renderRow(question, index) {
         return (
             <tr key={index}>
                 <td>{question.question}</td>
-                <td><i className="material-icons">mode_edit</i></td>
-                <td><i className="material-icons">delete</i></td>
+                <td><i className="material-icons" onClick={this.handleClick}>mode_edit</i></td>
+                <td><i className="material-icons" onClick={this.handleClick}>delete</i></td>
             </tr>
         )
     }
 
     render() {
         let rows = ''
-
         if(Object.keys(this.props.questions).length > 0) {
-            rows = this.props.questions.questions.map((question, index) => {
+            rows = Object.keys(this.props.questions.questions).map((question, index) => {
                 return (
-                    this.renderRow(question, index)
+                    this.renderRow(this.props.questions.questions[question], question, index)
                 )
             })
         }
@@ -35,10 +39,9 @@ class Questions extends Component {
         return (
             <div className="page-container">
                 <AdminNav />
-                <div className="our-definitions-container table-responsive">
+                <div className="questions-container table-responsive">
                     <table className="table table-striped">
-                        <tbody>
-                            <tr>
+                        <tbody><tr>
                                 <td>Question</td>
                                 <td>Edit</td>
                                 <td>Delete</td>
@@ -46,6 +49,7 @@ class Questions extends Component {
                             {rows}
                         </tbody>
                     </table>
+                    <Link to="/admin/questions/new" className="button">Add New</Link>
                 </div>
             </div>
         )

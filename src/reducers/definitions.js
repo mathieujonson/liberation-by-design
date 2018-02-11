@@ -9,6 +9,13 @@ export function definitions(state = {}, action) {
                 success: '',
             });
         }
+        case ActionTypes.PushNewDefinition: {
+            return Object.assign({}, state, {
+                inProgress: true,
+                error: '',
+                success: '',
+            });
+        }
         case ActionTypes.GetDefinitionsRejected: {
             return Object.assign({}, state, {
                 inProgress: false,
@@ -20,6 +27,20 @@ export function definitions(state = {}, action) {
             return Object.assign({}, state, {
                 inProgress: false,
                 success: 'Got definitions.',
+                definitions: definitions,
+            })
+        }
+        case ActionTypes.PushNewDefinitionRejected: {
+            return Object.assign({}, state, {
+                inProgress: false,
+                error: 'Error pushing new defintion to database.'
+            })
+        }
+        case ActionTypes.PushDefinitionFulfilled: {
+            const definitions = action.definitions
+            return Object.assign({}, state, {
+                inProgress: false,
+                success: 'Inserted definition.',
                 definitions: definitions,
             })
         }

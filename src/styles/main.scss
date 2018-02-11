@@ -8,19 +8,20 @@
 @import './partials/reset';
 @import './partials/header';
 @import './partials/footer';
+@import './partials/admin';
 
 /* Pages */
 @import './pages/home';
 @import './pages/how-to-play';
 @import './pages/our-definitions';
 @import './pages/play';
+@import './pages/questions';
 
 /* Generic Site-Wide Styles*/
 body {
   font-family: 'Poppins', system-ui, sans-serif;
   background-color:$backgroundColor;
   color:$fontColor;
-  padding-bottom:40px;
 }
 
 .content-container {
@@ -56,9 +57,10 @@ button, a.button {
   padding:1em;
   letter-spacing:1px;
   font-size:1em;
-  margin:0 auto;
+  margin:0 0 0 auto;
   width:200px;
   text-decoration:none;
+  text-align:center;
 }
 
 input {
@@ -66,4 +68,8 @@ input {
   width:100%;
   padding:1em;
   font-size:1em;
+}
+
+.material-icons {
+  cursor:pointer;
 }

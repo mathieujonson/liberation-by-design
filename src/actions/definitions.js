@@ -15,6 +15,38 @@ export function getDefinitions() {
     }
 }
 
+export function pushNewDefinition(term, definition) {
+    return dispatch => {
+        dispatch(pushNewDefinitionRequestAction());
+        return database.ref('/definitions').set({
+            term: term,
+            definition: definition
+        }).catch((error) => {
+            console.log(error);
+            dispatch(pushNewDefinitionRejectedAction());
+        })
+    }
+}
+
+function pushNewDefinitionRequestAction() {
+    return {
+        type: ActionTypes.PushNewDefinition
+    }
+}
+
+function pushNewDefinitionRejectedAction() {
+    return {
+        type: ActionTypes.PushNewDefinitionRejected
+    }
+}
+
+function PushDefinitionsFulfilledAction(definitions) {
+    return {
+        type: ActionTypes.PushDefinitionFulfilled,
+        definitions
+    }
+}
+
 function getDefinitionsRequestedAction() {
     return {
         type: ActionTypes.GetDefinitionsRequested

@@ -5,6 +5,11 @@ const ActionTypes = {
     GetDefinitionsRequested: 'GET_DEFINITIONS_REQUESTED',
     GetDefinitionsRejected:  'GET_DEFINITIONS_REJECTED',
     GetDefinitionsFulfilled: 'GET_DEFINITIONS_FULFILLED',
+
+    PushDefinition:          'PUSH_DEFINITION',
+    PushDefinitionRequested: 'PUSH_DEFINITION_REQUESTED',
+    PushDefinitionRejected:  'PUSH_DEFINITION_REJECTED',
+    PushDefinitionFulfilled: 'PUSH_DEFINITION_FULFILLED',
     
     GetQuestions:            'GET_QUESTIONS',
     GetQuestionsRequested:   'GET_QUESTIONS_REQUESTED',
