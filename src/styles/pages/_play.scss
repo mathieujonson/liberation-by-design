@@ -2,6 +2,20 @@
   max-width:700px;
   margin:0 auto;
 }
+.scoreboard {
+  background:#fafafa;
+  color:$darkgray;
+  text-transform:uppercase;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom:30px;
+  border: 2px solid $darkgray;
+  font-size: 14px;
+  p {
+    margin:0;
+  }
+}
 
 .card-container {
     height:350px;
@@ -24,7 +38,7 @@
   width:500px;
   height:350px;
   margin:0 auto;
-  border:1px solid $darkgray;
+  border:2px solid $darkgray;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -80,14 +94,15 @@
 
 .answer-buttons {
   padding:10px 0;
-  background:#CCC;
   text-align:center;
   margin:0 auto;
   width:500px;
+  display:flex;
+  justify-content: space-between;
   .btn--answer {
     color:#FFF;
     border:2px solid $darkgray;
-    margin:0 5px;
+    margin:0;
     width:115px;
     display:inline-block;
     text-transform:uppercase;
@@ -117,4 +132,5 @@ a.btn--next {
   background:$darkgray;
   border-radius:0;
   color:#FFF;
+  text-transform:uppercase;
 }

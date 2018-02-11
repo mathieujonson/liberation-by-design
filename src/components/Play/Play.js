@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Questions from './Questions'
+import Summary from './Summary'
 import {addUser} from '../../actions/user'
 import {getQuestions} from '../../actions/questions'
 
@@ -38,7 +39,9 @@ class Play extends Component {
         <div className="scoreboard">
           <p>score: {this.props.user.score}</p>
         </div>
-        <Questions />
+        {/* <Questions /> */}
+
+        <Summary />
       </div>
     )
   }
