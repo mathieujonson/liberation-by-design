@@ -9,13 +9,6 @@ export function definitions(state = {}, action) {
                 success: '',
             });
         }
-        case ActionTypes.PushNewDefinition: {
-            return Object.assign({}, state, {
-                inProgress: true,
-                error: '',
-                success: '',
-            });
-        }
         case ActionTypes.GetDefinitionsRejected: {
             return Object.assign({}, state, {
                 inProgress: false,
@@ -30,7 +23,14 @@ export function definitions(state = {}, action) {
                 definitions: definitions,
             })
         }
-        case ActionTypes.PushNewDefinitionRejected: {
+        case ActionTypes.PushDefinition: {
+            return Object.assign({}, state, {
+                inProgress: true,
+                error: '',
+                success: '',
+            });
+        }
+        case ActionTypes.PushDefinitionRejected: {
             return Object.assign({}, state, {
                 inProgress: false,
                 error: 'Error pushing new defintion to database.'
@@ -38,11 +38,21 @@ export function definitions(state = {}, action) {
         }
         case ActionTypes.PushDefinitionFulfilled: {
             const definitions = action.definition
-            console.log("say what", definitions)
             return Object.assign({}, state, {
                 inProgress: false,
                 success: 'Inserted definition.',
                 definitions: [...state.definitions, ...definitions],
+            })
+        }
+        case ActionTypes.DeleteDefinitionFulfilled: {
+            const key = action.key,
+                  newState = Object.assign({}, state)
+
+            delete newState[key]
+
+            return Object.assign({}, newState, {
+                inProgress: false,
+                success: 'Inserted definition.',
             })
         }
         default:

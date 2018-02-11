@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom'
 
 class AdminNav extends Component {
     render() {
-console.log(window.location.pathname);
         const questionClass =   /question/i.test(window.location.pathname) ? 'active' : '',
               definitionClass = /definition/i.test(window.location.pathname) ? 'active' : ''
 

@@ -90,7 +90,6 @@
 .nav-buttons a:link {
   text-decoration: none;
   flex-direction: row;
-  color: white;
   text-align: center;
   display: inline-block;
 
@@ -106,7 +105,7 @@
   margin: 5px;
 }
 
-.nav-buttons a:hover {
+.nav-buttons a:hover, .nav-buttons a.active {
   color: white;
   background-color: rgba(0,0,0,.6);
   border-color: black;

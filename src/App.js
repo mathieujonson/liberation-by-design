@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Header from './components/Header'
-import Home from './components/Home/Home'
-import HowToPlay from './components/HowToPlay/HowToPlay'
-import Definitions from './components/Definitions/Definitions'
+import Home from './components/Home/index'
+import HowToPlay from './components/HowToPlay/index'
+import Definitions from './components/Definitions/index'
 import Play from './components/Play/Play'
 import AdminIndex from './components/Admin/Index'
 import NotFound from './components/NotFound'

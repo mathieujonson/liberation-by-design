@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getDefinitions} from '../../../actions/definitions';
+import {getDefinitions, deleteDefinition} from '../../../actions/definitions';
 import AdminNav from '../AdminNav'
 import {Link} from 'react-router-dom'
 
@@ -9,13 +9,21 @@ class AdminDefinitions extends Component {
         this.props.getDefinitions()
     }   
 
-    renderRow(definition, index) {
+    handleEdit(key) {
+        console.log("edit this")
+    }
+
+    handleDelete(key) {
+        this.props.deleteDefinition(key)
+    }
+
+    renderRow(definition, index, key) {
         return (
             <tr key={index}>
                 <td>{definition.term}</td>
                 <td>{definition.definition}</td>
-                <td><i className="material-icons">mode_edit</i></td>
-                <td><i className="material-icons">delete</i></td>
+                <td><i className="material-icons" onClick={(e) => {this.handleEdit(key)}}>mode_edit</i></td>
+                <td><i className="material-icons" onClick={(e) => {this.handleDelete(key)}}>delete</i></td>
             </tr>
         )
     }
@@ -25,8 +33,9 @@ class AdminDefinitions extends Component {
 
         if(Object.keys(this.props.definitions).length > 0) {
             rows = Object.keys(this.props.definitions.definitions).map((definition, index) => {
-                return (
-                    this.renderRow(this.props.definitions.definitions[definition], definition, index)
+                let key = Object.keys(this.props.definitions.definitions)[index]
+                    return (
+                    this.renderRow(this.props.definitions.definitions[definition], index, key)
                 )
             })
         }
@@ -34,9 +43,7 @@ class AdminDefinitions extends Component {
         return (
             <div className="page-container">
                 <AdminNav />
-            <div className="admin-deffinitions">
-
-                <h3>Definitions</h3>
+            <div className="admin-definitions">
                 <table className="table table-striped">
                 <tbody>
                     <tr>
@@ -65,7 +72,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getDefinitions: () => dispatch(getDefinitions())
+        getDefinitions: () => dispatch(getDefinitions()),
+        deleteDefinition: (key) => dispatch(deleteDefinition(key))
     };
 }
 

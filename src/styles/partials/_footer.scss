@@ -9,17 +9,25 @@
   //width: 650px;
 }
 
+
 .footer-buttons{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 1em;
-  margin: 0 20px;
-
+  margin: 0 auto;
+  flex-wrap:wrap;
+  max-width:535px;
+  @media(max-width:600px) {
+    justify-content:center;
+    li {
+      width:50%;
+      margin-bottom:10px;
+    }
+  }
   a{
-    //color: red;
+    display:inline-block;
     color: #878787;
-    //color: rgba(135, 135, 135, 0.5);
     font-family: Poppins, system-ui, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -28,7 +36,8 @@
     line-height: 1.8em;
     text-transform: uppercase;
     text-decoration: none;
-
+    text-align:center;
+    width:100%;
   }
   a:hover {
     //color: #878787;
@@ -46,7 +55,7 @@
 .media-buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 17px 0;
 }
 

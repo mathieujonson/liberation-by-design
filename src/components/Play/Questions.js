@@ -49,7 +49,7 @@ class Questions extends Component {
     }
 
     render() {
-        let question = this.props.questions.questions[this.props.user.questions[0]]
+        let question = this.props.questions.questions[Object.keys(this.props.user.questions)[0]]
 
         let questionMarkup = <p>{question.question}</p>
 
