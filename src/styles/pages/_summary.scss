@@ -37,7 +37,16 @@
             color:$green;
         }
     }
-    &__share {
+    &__survey {
         text-align:center;
+    }
+    &__share {
+        text-align: center;
+        background:#fafafa;
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 2px solid $darkgray;
+        color:$darkgray;
     }
 }

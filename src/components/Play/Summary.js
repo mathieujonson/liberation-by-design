@@ -63,16 +63,16 @@ class Summary extends Component {
                     <ol>
                         {questionSummary}
                     </ol>
+                </div>                        
+                <div className="summary__survey">
+                    <p>Before you go, please take our short survey!</p>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeleRf1hZPZzzx2UoTpkjb-3PSRi1ngGqBEffpiu2LrSSHGxQ/viewform?embedded=true" width="700" height="500" frameBorder="0" marginHeight="0" marginWidth="0">Loading...</iframe>                
                 </div>
                 <div className="summary__share">
                     <p>Share this game with a friend!</p>
                     {/* Facebook */}
                     <div className="fb-share-button" data-href="https://liberation-by-design.firebaseapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fliberation-by-design.firebaseapp.com%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a></div>
-                </div>            
-                <div className="survey-container">
-                    <p>Before you go, please take our short survey!</p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeleRf1hZPZzzx2UoTpkjb-3PSRi1ngGqBEffpiu2LrSSHGxQ/viewform?embedded=true" width="700" height="500" frameBorder="0" marginHeight="0" marginWidth="0">Loading...</iframe>                
-                </div>
+                </div>                    
             </div>
         )
     }

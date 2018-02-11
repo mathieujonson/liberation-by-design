@@ -39,9 +39,9 @@ class Play extends Component {
         <div className="scoreboard">
           <p>score: {this.props.user.score}</p>
         </div>
-        {/* <Questions /> */}
+        <Questions />
 
-        <Summary />
+        {/* <Summary /> */}
       </div>
     )
   }
