@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Questions from './Questions'
 import {addUser} from '../../actions/user'
+import {getQuestions} from '../../actions/questions'
 
 class Play extends Component {
   componentWillMount() {
@@ -11,8 +12,14 @@ class Play extends Component {
       console.log('***user logged in***', this.props.user.id)
     } else {
       //if no, get questions, create user, and start game
-      console.log('***create new user***')
-      this.props.addUser()
+      this.props.getQuestions().then(
+      onFulfilled => {
+          this.props.addUser(onFulfilled.val())
+      }, 
+      onRejected => {
+        // error
+        // console.log('***failure*** ', onRejected)
+      })
     }
   }
 
@@ -22,18 +29,12 @@ class Play extends Component {
 
   render() {
 
-    if(Object.keys(this.props.user).length > 0) {
-      console.log('****', this.props.user)
-    }
-
-    console.log('***store***', this.props.state)
-
     return (
       <div className="play-container">
           <div className="score">score:</div>
           <div className="question">
             <div className="question__index">question:</div>
-            <Questions />
+            {/* <Questions /> */}
           </div>
       </div>
     )
@@ -42,14 +43,17 @@ class Play extends Component {
 
 function mapStateToProps(state) {
     return {
+        questions: state.questions,
         user: state.user,
         state: state,
+        questionsInProgress: state.questions.inProgress
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        addUser: () => dispatch(addUser())
+        getQuestions: () => dispatch(getQuestions()),
+        addUser: questions => dispatch(addUser(questions))
     };
 }
 

@@ -2,29 +2,22 @@
 import ActionTypes from '../action-types';
 import {database} from './database';
 
-export function addUser() {
+export function addUser(questions) {
+    let reducedArrayOfKeys = []
+
+    Object.keys(questions).forEach( (key) => {
+        if (questions[key].skill.toLowerCase() == 'moderate') reducedArrayOfKeys.push(key) 
+    })
+    
     return dispatch => {
         dispatch(addUserRequestedAction());
         let userId = database.ref().child('users').push().key
 
-        // let addUserEndpoint = database.ref('/users/'+userId).on('value', snap => {
-        //     console.log('***we are getting data***', snap.val())
-        // })
-
         let userData = {
             id: userId,
-            games: [
-                {
-                    question_index: 1,
-                    score: 20,
-                    questions: [
-                        '123abc',
-                        'abc123',
-                        '321cba',
-                        'cba321'
-                    ]
-                }
-            ],
+            questions: reducedArrayOfKeys,
+            answers: [],
+            score: 20,
             survey: 'yes'
         }
 
@@ -36,7 +29,7 @@ export function addUser() {
             dispatch(addUserFulfilledAction(userData)) 
         }, 
         () => {
-            dispatch(addUserRejectedAction());
+            dispatch(addUserRejectedAction())
         })
     }
 }
