@@ -21,15 +21,11 @@ export default (props) => (
         </div>
         <section className="social-media">
             <ul className="media-buttons">
-                <li><a href="https://www.facebook.com/CreativeReactionLab" className="fa fa-facebook">facebook</a></li>
-                <li><a href="https://twitter.com/CreativeRxlab" className="fa fa-twitter"></a>twitter</li>
-                {/*https://twitter.com/CreativeRxlab*/}
+                <li><a href="https://www.facebook.com/CreativeReactionLab" className="fa fa-facebook"></a></li>
+                <li><a href="https://twitter.com/CreativeRxlab" className="fa fa-twitter"></a></li>
                 <li><a href="https://www.linkedin.com/company/creative-reaction-lab" className="fa fa-linkedin"></a></li>
-                {/*https://www.linkedin.com/company/creative-reaction-lab*/}
             <li><a href="mailto:acarroll@creativereactionlab.com" className="fa fa-envelope-o"></a></li>
-                {/*mailto:acarroll@creativereactionlab.com*/}
                 <li><a href="https://www.instagram.com/crxlab/" className="fa fa-instagram"></a></li>
-                {/*https://www.instagram.com/crxlab/*/}
             </ul>
         </section>
     </footer>
