@@ -27,12 +27,12 @@ class App extends Component {
                             <Route path="/how-to-play" component={HowToPlay} />
                             <Route path="/our-definitions" component={Definitions} />
                             <Route path="/play" component={Play} />
-                            <Route path="/admin/definitions" component={AdminDefinitions} />
                             <Route path="/admin/dashboard" component={Dashboard} />
                             <Route path="/admin/questions/new" component={AdminQuestionsForm} />
                             <Route path="/admin/questions" component={AdminQuestions} />
-                            <Route path="/admin/create-definition" component={AdminCreateDefinition} />
-                            <Route path="/admin" component={AdminIndex} />                            
+                            <Route path="/admin/definitions/new" component={AdminCreateDefinition} />
+                            <Route path="/admin/definitions" component={AdminDefinitions} />
+                            <Route path="/admin" component={AdminIndex} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>

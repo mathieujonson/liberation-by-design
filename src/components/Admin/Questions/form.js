@@ -35,21 +35,21 @@ class Questions extends Component {
                     <form>
                         <div className="form-group">
                             <label htmlFor="question">Question</label>
-                            <input type="text" id="question" onChange={this.handleChange()} />
+                            <input type="text" id="question" onChange={this.handleChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="answer">Answer</label>
-                            <input type="text" id="answer" onChange={this.handleChange()} />
+                            <input type="text" id="answer" onChange={this.handleChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
-                            <input type="text" id="description" onChange={this.handleChange()} />
+                            <input type="text" id="description" onChange={this.handleChange} />
                         </div>
                         <div className="row">
                             <div className="col">
                                 <div className="form-group">
                                     <label htmlFor="skill">Skill</label>
-                                    <select type="text" id="skill" className="form-control" onChange={this.handleChange()}>
+                                    <select type="text" id="skill" className="form-control" onChange={this.handleChange}>
                                         <option value="easy">Beginner</option>
                                         <option value="moderate">Moderate</option>
                                         <option value="advanced">Advanced</option>
@@ -59,7 +59,7 @@ class Questions extends Component {
                             <div className="col">
                                 <div className="form-group">
                                     <label htmlFor="points">Points</label>
-                                    <select type="text" id="points" className="form-control" onChange={this.handleChange()}>
+                                    <select type="text" id="points" className="form-control" onChange={this.handleChange}>
                                         <option value="1">Beginner</option>
                                         <option value="2">Moderate</option>
                                         <option value="3">Advanced</option>

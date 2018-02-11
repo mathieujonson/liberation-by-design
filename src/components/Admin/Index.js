@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router';
 import Login from './Login'
-import Questions from './Questions/index'
 import {getLogin} from '../../actions/login'
 
 

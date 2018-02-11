@@ -4,10 +4,14 @@ import {NavLink} from 'react-router-dom'
 
 class AdminNav extends Component {
     render() {
+console.log(window.location.pathname);
+        const questionClass =   /question/i.test(window.location.pathname) ? 'active' : '',
+              definitionClass = /definition/i.test(window.location.pathname) ? 'active' : ''
+
         return (
             <nav className="admin-nav">
-                <NavLink exact to="/admin/questions:placeholder" activeClassName="active">Questions</NavLink>
-                <NavLink exact to="/admin/definitions:placeholder" activeClassName="active">Definitions</NavLink>
+                <NavLink exact to="/admin/questions" className={questionClass}>Questions</NavLink>
+                <NavLink exact to="/admin/definitions" className={definitionClass}>Definitions</NavLink>
             </nav>
         )
     }

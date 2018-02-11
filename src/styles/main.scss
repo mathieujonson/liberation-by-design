@@ -49,18 +49,23 @@ label {
   margin-bottom:10px;
 }
 
-button, a.button {
+$gray: rgba(0,0,0,0.6);
+button.btn, a.button, button {
   display:block;
-  background-color:#000;
-  color:#fff;
-  border:0;
-  padding:1em;
   letter-spacing:1px;
   font-size:1em;
   margin:0 0 0 auto;
-  width:200px;
-  text-decoration:none;
+  // width:200px;
   text-align:center;
+  color: $gray;
+  border: 2px solid $gray;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 0;
+}
+button:hover, a.button:hover {
+  background-color: #5416B4;
+  color: #fff;
 }
 
 input {
