@@ -16,6 +16,7 @@
 @import './pages/our-definitions';
 @import './pages/play';
 @import './pages/questions';
+@import './pages/_admin-definitions';
 
 /* Generic Site-Wide Styles*/
 body {
@@ -66,7 +67,6 @@ button.btn, a.button, button {
 button:hover, a.button:hover {
   background-color: $gray;
   color: #fff;
-  border-color: #000;
 }
 
 input {

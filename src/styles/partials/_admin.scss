@@ -10,7 +10,7 @@ nav.admin-nav {
         text-decoration: none;
 
         &.active {
-            background-color: $gray;
+            background-color: rgba(0,0,0,.6);
             color: #fff;
         }
     }
@@ -18,7 +18,7 @@ nav.admin-nav {
         margin-left: 0;
     }
     a:hover {
-        background-color: $gray;
+        background-color: rgba(0,0,0,.6);
         color: #fff;
         border-color: #000;
     }

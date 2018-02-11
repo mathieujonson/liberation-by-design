@@ -1,38 +1,64 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../actions/questions';
+import {getQuestions} from '../../actions/questions'
 
 
 class Questions extends Component {
     componentWillMount() {
-        this.props.getQuestions()
+        // this.props.getQuestions().then(
+        // onFulfilled => {
+        //     console.log('***success*** ', onFulfilled)
+        // }, 
+        // onRejected => {
+        //     console.log('***failure*** ', onRejected)
+        // })
     }
 
-    componentDidMount() {
-        document.title = 'Our Questions - Liberation By Design'
+    flipCard() {
+        const nextBtn = document.querySelector('.btn--next');
+        const card = document.querySelector('.card-container');
+        nextBtn.onclick = function () {
+            card.classList.toggle('flip');
+        }
     }
 
     render() {
-        let list = ''
+        let question = this.props.questions.questions[this.props.user.questions[0]]
 
-        if(Object.keys(this.props.questions).length > 0) {
-            list = this.props.questions.questions.map((question, index) => {
-                return (
-                    <li key={index}><strong>{question.term}</strong>: {question.question}</li>
-                )
-            })
-        }
+        let questionMarkup = <p>{question.question}</p>
 
-        console.log(list)
+        let pointsMarkup = question.points > 1 ? `${question.points} points` : `${question.points} point`;
 
         return (
-            <div className="our-questions-container">
-                <h1>Our Questions</h1>
-                <ul>
-                    {list}
-                </ul>
-                <Link to='/play' className="button">Let's Play!</Link>
+            <div>
+                <div className="card-container">
+                    <div className="card">
+                        <div className="card__side card__side--question">
+                            <div className="question__text">
+                                {questionMarkup}
+                            </div>
+                            <div className="question__info">
+                                <div className="question__skill">{question.skill}</div>
+                                <div className="question__points">{pointsMarkup}</div>
+                            </div>
+                        </div>
+                        <div className="card__side card__side--answer">
+                            <div className="answer__text">
+                                <p>{question.answer} by design</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div className="answer-buttons">
+                    <button className="btn btn--answer btn--equity">Equity</button>
+                    <button className="btn btn--answer btn--equality">Equality</button>
+                    <button className="btn btn--answer btn--diversity">Diversity</button>
+                    <button className="btn btn--answer btn--inclusion">Inclusion</button>
+                </div>
+                <div className="game-nav">
+                    <Link to='/play' className="btn btn-lg btn--next" onClick={this.flipCard}>Submit</Link>
+                </div>
             </div>
         )
     }
@@ -41,6 +67,7 @@ class Questions extends Component {
 function mapStateToProps(state) {
     return {
         questions: state.questions,
+        user: state.user,
         state: state,
         inProgress: state.questions.inProgress
     };
@@ -52,4 +79,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+export default connect(mapStateToProps, mapDispatchToProps)(Questions)
