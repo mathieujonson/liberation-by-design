@@ -23,7 +23,7 @@ class AdminDefinitions extends Component {
           });
     }
 
-    handleSubmit = event => {
+    handleSubmit = () => {
         this.props.pushDefinition(this.state.term, this.state.definition)
         this.setState({
             term: '',

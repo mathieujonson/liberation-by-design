@@ -22,8 +22,8 @@ class AdminDefinitions extends Component {
             <tr key={index}>
                 <td>{definition.term}</td>
                 <td>{definition.definition}</td>
-                <td><i className="material-icons" onClick={(e) => {this.handleEdit(key)}}>mode_edit</i></td>
-                <td><i className="material-icons" onClick={(e) => {this.handleDelete(key)}}>delete</i></td>
+                <td><i className="material-icons" onClick={(key) => {this.handleEdit(key)}}>mode_edit</i></td>
+                <td><i className="material-icons" onClick={(key) => {this.handleDelete(key)}}>delete</i></td>
             </tr>
         )
     }
