@@ -34,9 +34,7 @@ class AdminDefinitions extends Component {
         return (
             <div className="page-container">
                 <AdminNav />
-            <div className="admin-deffinitions">
-
-                <h3>Definitions</h3>
+            <div className="admin-definitions">
                 <table className="table table-striped">
                 <tbody>
                     <tr>

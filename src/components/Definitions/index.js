@@ -11,18 +11,23 @@ class Definitions extends Component {
 
     }
 
+    renderList(definition, term) {
+        return (
+            <li><strong>{term}</strong>: {definition}</li>
+        )
+    }
+
     render() {
         let list = ''
 
         if(Object.keys(this.props.definitions).length > 0) {
-            list = this.props.definitions.definitions.map((definition, index) => {
+            list = Object.keys(this.props.definitions.definitions).map((definition) => {
+                console.log(this.props.definitions.definitions[definition])
                 return (
-                    <li key={index}><strong>{definition.term}</strong>: {definition.definition}</li>
+                    this.renderList(this.props.definitions.definitions[definition].definition, this.props.definitions.definitions[definition].term)
                 )
             })
         }
-
-        // console.log(list)
 
         return (
             <div className="our-definitions-container">

@@ -1,0 +1,9 @@
+.admin-definitions {
+  .table {
+    margin-bottom:1.25em;
+  }
+  td:nth-of-type(3), td:nth-of-type(4) {
+    width:5%;
+    text-align:center;
+  }
+}
