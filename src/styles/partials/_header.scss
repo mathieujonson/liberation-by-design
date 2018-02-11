@@ -44,10 +44,10 @@
   //margin: 2em 0;
   //width: 45px;
 
-  height: 85px;
+  height: 140px;
   padding: 10px;
-  width: 85px;
-  margin: 20px 10px;
+  width: 140px;
+  margin: 0px 10px;
 }
 
 //container for the nav buttons
@@ -57,6 +57,7 @@
   flex-direction: row;
   align-items:center;
   justify-content: flex-end;
+  margin: 10px 10px;
 }
 
 .buttons {
@@ -65,28 +66,16 @@
   //color: rgba(0, 0, 0, .6);
   display:flex;
   align-items:center;
-  //padding: 0 1.25em;
-  //text-decoration: none;
-  ////font-family: Poppins;
-  //font-weight: 600;
-  //font-style: normal;
-  //font-size: 14px;
-  //letter-spacing: .18em;
-  //text-transform: uppercase;
-  //&.active {
-  //  color: rgba(0, 0, 0, .6);
-  //  //text-decoration:underline;
-  //}
 }
 
-a:link {
+.nav-buttons a:link {
   text-decoration: none;
   flex-direction: row;
   color: white;
   text-align: center;
   display: inline-block;
 
-  font-family: Poppins;
+  font-family: Poppins, system-ui, sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 11px;
@@ -98,7 +87,7 @@ a:link {
   margin: 5px;
 }
 
-a:hover {
+.nav-buttons a:hover {
   color: white;
   background-color: rgba(0, 0, 0, .6);
   border-color: black;
