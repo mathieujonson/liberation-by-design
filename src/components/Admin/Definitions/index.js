@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {NavLink} from 'react-router-dom'
 import {getDefinitions} from '../../../actions/definitions';
+import AdminNav from '../AdminNav'
 
 class AdminDefinitions extends Component {
     componentWillMount() {
@@ -31,7 +31,11 @@ class AdminDefinitions extends Component {
         }
 
             return (
+                
                 <div className="admin-deffinitions">
+                <div className="page-container">
+                    <AdminNav />
+                </div>
                     <h3>Definitions</h3>   
                     <table className="table table-striped">
                     <tbody>
@@ -45,6 +49,8 @@ class AdminDefinitions extends Component {
                     </tbody>
                 </table>
                 </div>
+                
+
         )
     }
 }

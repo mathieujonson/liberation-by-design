@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getQuestions} from '../../../actions/questions';
+import AdminNav from '../AdminNav'
 
 
 class Questions extends Component {
@@ -32,17 +33,20 @@ class Questions extends Component {
         }
 
         return (
-            <div className="our-definitions-container table-responsive">
-                <table className="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td>Question</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
-                        </tr>
-                        {rows}
-                    </tbody>
-                </table>
+            <div className="page-container">
+                <AdminNav />
+                <div className="our-definitions-container table-responsive">
+                    <table className="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Question</td>
+                                <td>Edit</td>
+                                <td>Delete</td>
+                            </tr>
+                            {rows}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }

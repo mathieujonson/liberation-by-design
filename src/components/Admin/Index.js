@@ -1,15 +1,14 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Login from './Login'
-import Dashboard from './Dashboard'
-import { Route } from 'react-router'
+import Questions from './Questions/index'
 import {getLogin} from '../../actions/login'
 
 
 class Index extends Component {
   
     render() {        
-        const markup = Object.keys(this.props.login).length > 0 ? <Dashboard /> : <Login />
+        const markup = Object.keys(this.props.login).length > 0 ? <Questions /> : <Login />
         
         return (
             <div>
