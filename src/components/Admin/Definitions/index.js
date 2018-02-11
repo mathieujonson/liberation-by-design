@@ -9,9 +9,9 @@ class AdminDefinitions extends Component {
         this.props.getDefinitions()
     }   
 
-    handleEdit(key) {
-        console.log("edit this")
-    }
+    // handleEdit(key) {               
+    //     this.props.history.push(`/admin/definitions/edit?key=${key}`)
+    // }
 
     handleDelete(key) {
         this.props.deleteDefinition(key)
@@ -22,7 +22,7 @@ class AdminDefinitions extends Component {
             <tr key={index}>
                 <td>{definition.term}</td>
                 <td>{definition.definition}</td>
-                <td><i className="material-icons" onClick={(e) => {this.handleEdit(key)}}>mode_edit</i></td>
+                {/* <td><i className="material-icons" onClick={(e) => {this.handleEdit(key)}}>mode_edit</i></td> */}
                 <td><i className="material-icons" onClick={(e) => {this.handleDelete(key)}}>delete</i></td>
             </tr>
         )
@@ -49,7 +49,7 @@ class AdminDefinitions extends Component {
                     <tr>
                         <td>Term</td>
                         <td>Definition</td>
-                        <td>Edit</td>
+                        {/* <td>Edit</td> */}
                         <td>Delete</td>
                     </tr>
                     {rows}

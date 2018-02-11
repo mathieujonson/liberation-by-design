@@ -1,13 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getDefinitions, pushDefinition} from '../../../actions/definitions';
+import {getDefinition, pushDefinition} from '../../../actions/definitions';
 import AdminNav from '../AdminNav'
 
 class AdminDefinitions extends Component {
-    componentWillMount() {
-        document.title = 'New Definition - Admin'
-    }   
-    
+
     constructor(props) {
         super(props);
     
@@ -16,6 +13,16 @@ class AdminDefinitions extends Component {
             definition: ""
         };
       }
+
+    componentWillMount() {
+        document.title = 'New Definition - Admin' 
+
+        if(window.location.search.length > 0) {
+            const key = window.location.search.split("=")[1]            
+            this.props.getDefinition(key)
+        }
+    }      
+  
 
     handleChange = event => {
         this.setState({
@@ -31,7 +38,8 @@ class AdminDefinitions extends Component {
         })
     }
 
-    render() {        
+    render() {
+
             return (
                 <div className="definition-container">
                 <AdminNav />
@@ -39,7 +47,7 @@ class AdminDefinitions extends Component {
                     <form>
                         <div className="form-group">
                             <label htmlFor="term">Term</label>
-                            <input value={this.state.term} type="text" id="term" onChange={(e)=>this.handleChange(e)} />
+                            <input value={this.state.temr} type="text" id="term" onChange={(e)=>this.handleChange(e)} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="definition">Definition</label>
@@ -57,13 +65,15 @@ function mapStateToProps(state) {
     return {
         definitions: state.definitions,
         state: state,
-        inProgress: state.definitions.inProgress
+        inProgress: state.definitions.inProgress,
+        definition: state.definition
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        pushDefinition: (term, definition) => dispatch(pushDefinition(term, definition))
+        pushDefinition: (term, definition) => dispatch(pushDefinition(term, definition)),
+        getDefinition: (key) => dispatch(getDefinition(key))
     };
 }
 

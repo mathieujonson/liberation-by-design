@@ -40,6 +40,11 @@ const ActionTypes = {
     UpdateUserRequested:       'UPDATE_USER_REQUESTED',
     UpdateUserRejected:        'UPDATE_USER_REJECTED',
     UpdateUserFulfilled:       'UPDATE_USER_FULFILLED',
+
+    GetDefinition:            'GET_DEFINITION',
+    GetDefinitionRequested:   'GET_DEFINITION_REQUESTED',
+    GetDefinitionRejected:    'GET_DEFINITION_REJECTED',
+    GetDefinitionFulfilled:   'GET_DEFINITION_FULFILLED',
 };
 
 export default ActionTypes;
