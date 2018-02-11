@@ -2,7 +2,31 @@
   display:flex;
   flex-direction:column;
   justify-content:center;
+  ul {
+    list-style-type:disc;
+  }
+  ul, ol {
+    margin-left:30px;
+    line-height:1.5;
+    margin-bottom:20px;
+  }
+  ol {
+    margin-left:0;
+  }
+  ol li {
+    margin-bottom:5px;
+  }
+  h3, h6 {
+    font-weight:bold;
+    margin-bottom:5px;
+  }
   p {
-    margin-bottom:2.5em;
+    margin-bottom:1.25em;
+  }
+  .italics {
+    font-style:italic;
+  }
+  .bottom-margin-small {
+    margin-bottom:5px;
   }
 }
