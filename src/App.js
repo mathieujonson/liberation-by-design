@@ -12,7 +12,7 @@ import AdminQuestions from './components/Admin/Questions/index'
 import AdminQuestionsForm from './components/Admin/Questions/form'
 import Dashboard from './components/Admin/AdminNav'
 import AdminDefinitions from './components/Admin/Definitions/index'
-import AdminCreateDefinition from './components/Admin/Definitions/forum'
+import AdminCreateDefinition from './components/Admin/Definitions/form'
 import './styles/main.css'
 
 class App extends Component {
