@@ -6,6 +6,7 @@ export function getDefinitions() {
         dispatch(getDefinitionsRequestedAction());
         return database.ref(`/definitions`).once('value', snap => {
             const definitions = snap.val();
+            console.log(definitions)
             dispatch(getDefinitionsFulfilledAction(definitions))
         }).catch((error) => {
             console.log(error);
