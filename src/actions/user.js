@@ -14,14 +14,13 @@ export function addUser(questions) {
         }
     })
 
-    console.log('888888', reducedObjOfKeys)
-    
     return dispatch => {
         dispatch(addUserRequestedAction());
         let userId = database.ref().child('users').push().key
 
         let userData = {
             id: userId,
+            question: "blank",
             questions: reducedObjOfKeys,
             answers: [],
             score: 0,
@@ -60,22 +59,20 @@ function addUserFulfilledAction(userData) {
     }
 }
 
-export function updateUser(questions) {
-    let reducedArrayOfKeys = []
-
-    Object.keys(questions).forEach( (key) => {
-        if (questions[key].skill.toLowerCase() === 'moderate') reducedArrayOfKeys.push(key) 
-    })
+export function updateUser(userId, questionId, answer, points, score) {
+    console.log(userId, questionId, answer, points, score)
     
     return dispatch => {
         dispatch(updateUserRequestedAction());
-        let userId = database.ref().child('users').push().key
 
         let userData = {
-            id: userId,
-            questions: reducedArrayOfKeys,
-            answers: [],
-            score: 20,
+            // questions: {
+            //     questionId: {
+            //         correct: answer,
+            //         points: points
+            //     }
+            // },
+            score: score,
             survey: 'yes'
         }
 
@@ -108,5 +105,12 @@ function updateUserFulfilledAction(userData) {
     return {
         type: ActionTypes.UpdateUserFulfilled,
         userData
+    }
+}
+
+export function updateQuestion(question) {
+    return {
+        type: ActionTypes.UpdateQuestion,
+        question
     }
 }

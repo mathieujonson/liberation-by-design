@@ -107,6 +107,9 @@
     display:inline-block;
     text-transform:uppercase;
     font-size:13px;
+    &.answer--active {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
   }
 }
 .btn {
@@ -128,7 +131,7 @@
   text-align:right;
   margin-top:20px;
 }
-a.btn--next {
+.btn--next {
   background:$darkgray;
   border-radius:0;
   color:#FFF;
