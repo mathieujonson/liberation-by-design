@@ -44,6 +44,14 @@ export function user(state = {}, action) {
                 success: 'Updated user.',
             })
         }
+        case ActionTypes.UpdateQuestion: {
+            const question = action.question
+            return Object.assign({}, state, {
+                question,
+                inProgress: false,
+                success: 'Updated question.',
+            })
+        }
         default:
             return state;
     }

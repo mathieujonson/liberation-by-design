@@ -40,6 +40,8 @@ const ActionTypes = {
     UpdateUserRequested:       'UPDATE_USER_REQUESTED',
     UpdateUserRejected:        'UPDATE_USER_REJECTED',
     UpdateUserFulfilled:       'UPDATE_USER_FULFILLED',
+
+    UpdateQuestion: 'UPDATE_QUESTION',
 };
 
 export default ActionTypes;
