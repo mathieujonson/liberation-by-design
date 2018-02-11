@@ -14,9 +14,7 @@ export function getDefinitions() {
     }
 }
 
-export function pushDefinition(term, definition) {
-    console.log("term", term)
-    console.log("definition", definition)
+export function pushDefinition(term, definition) {    
     return dispatch => {
         dispatch(pushDefinitionRequestAction());
         return database.ref('/definitions').push({
