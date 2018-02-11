@@ -15,21 +15,50 @@ class Questions extends Component {
         // })
     }
 
-    componentDidMount() {
-        document.title = 'Our Questions - Liberation By Design'
+    flipCard() {
+        const nextBtn = document.querySelector('.btn--next');
+        const card = document.querySelector('.card-container');
+        nextBtn.onclick = function () {
+            card.classList.toggle('flip');
+        }
     }
 
     render() {
         let question = this.props.questions.questions[this.props.user.questions[0]]
 
-        let questionMarkup = <li>{question.question}</li>
+        let questionMarkup = <p>{question.question}</p>
+
+        let pointsMarkup = question.points > 1 ? `${question.points} points` : `${question.points} point`;
 
         return (
-            <div className="our-questions-container">
-                <ul>
-                    {questionMarkup}
-                </ul>
-                <Link to='/play' className="button">Submit</Link>
+            <div>
+                <div className="card-container">
+                    <div className="card">
+                        <div className="card__side card__side--question">
+                            <div className="question__text">
+                                {questionMarkup}
+                            </div>
+                            <div className="question__info">
+                                <div className="question__skill">{question.skill}</div>
+                                <div className="question__points">{pointsMarkup}</div>
+                            </div>
+                        </div>
+                        <div className="card__side card__side--answer">
+                            <div className="answer__text">
+                                <p>{question.answer} by design</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div className="answer-buttons">
+                    <button className="btn btn--answer btn--equity">Equity</button>
+                    <button className="btn btn--answer btn--equality">Equality</button>
+                    <button className="btn btn--answer btn--diversity">Diversity</button>
+                    <button className="btn btn--answer btn--inclusion">Inclusion</button>
+                </div>
+                <div className="game-nav">
+                    <Link to='/play' className="btn btn-lg btn--next" onClick={this.flipCard}>Submit</Link>
+                </div>
             </div>
         )
     }
