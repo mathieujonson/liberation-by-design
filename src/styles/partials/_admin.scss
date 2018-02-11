@@ -1,0 +1,12 @@
+nav.admin-nav {
+    display: flex;
+    
+    a {
+        padding: 10px;
+        margin: 20px 10px;
+
+        &.active {
+            border: 1px solid;
+        }
+    }
+}

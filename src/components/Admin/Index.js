@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { Redirect } from 'react-router';
 import Login from './Login'
 import Questions from './Questions/index'
 import {getLogin} from '../../actions/login'
@@ -8,7 +9,7 @@ import {getLogin} from '../../actions/login'
 class Index extends Component {
   
     render() {        
-        const markup = Object.keys(this.props.login).length > 0 ? <Questions /> : <Login />
+        const markup = Object.keys(this.props.login).length > 0 ? <Redirect to="/admin/questions" push /> : <Login />
         
         return (
             <div>
