@@ -14,6 +14,19 @@ export function getDefinitions() {
     }
 }
 
+export function getDefinition(key) {
+    return dispatch => {
+        dispatch(getDefinitionRequestedAction())
+        return database.ref(`/definitions/` + key).once('value', snap => {
+            const definition = snap.val()
+            dispatch(getDefinitionFulfilledAction(definition))
+        }).catch((error) => {
+            console.log(error)
+            dispatch(getDefinitionRejectedAction())
+        });
+    }
+}
+
 export function pushDefinition(term, definition) {
     return dispatch => {
         dispatch(pushDefinitionRequestAction())
@@ -99,5 +112,24 @@ function getDefinitionsFulfilledAction(definitions) {
     return {
         type: ActionTypes.GetDefinitionsFulfilled,
         definitions
+    }
+}
+
+function getDefinitionRequestedAction() {
+    return {
+        type: ActionTypes.GetDefinitionRequested
+    }
+}
+
+function getDefinitionFulfilledAction(definition) {
+    return {
+        type: ActionTypes.GetDefinitionFulfilled,
+        definition
+    }
+}
+
+function getDefinitionRejectedAction() {
+    return {
+        type: ActionTypes.GetDefinitionRejected
     }
 }

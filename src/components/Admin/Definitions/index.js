@@ -9,9 +9,9 @@ class AdminDefinitions extends Component {
         this.props.getDefinitions()
     }   
 
-    handleEdit(key) {
-        console.log("edit this")
-    }
+    // handleEdit(key) {               
+    //     this.props.history.push(`/admin/definitions/edit?key=${key}`)
+    // }
 
     handleDelete(key) {
         this.props.deleteDefinition(key)
