@@ -6,9 +6,22 @@
     margin-bottom:1.25em;
   }
   li {
+    line-height:1.5;
     margin-bottom:1.25em;
   }
   strong {
     font-weight:bold;
+  }
+  .blue {
+    color:$blue;
+  }
+  .orange {
+    color:$orange;
+  }
+  .green {
+    color:$green;
+  }
+  .pink {
+    color: $pink;
   }
 }
