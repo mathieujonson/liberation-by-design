@@ -3,22 +3,20 @@ import {database} from './database';
 
 export function getDefinitions() {
     return dispatch => {
-        dispatch(getDefinitionsRequestedAction());
+        dispatch(getDefinitionsRequestedAction())
         return database.ref(`/definitions`).once('value', snap => {
-            const definitions = snap.val();
+            const definitions = snap.val()
             dispatch(getDefinitionsFulfilledAction(definitions))
         }).catch((error) => {
-            console.log(error);
-            dispatch(getDefinitionsRejectedAction());
+            console.log(error)
+            dispatch(getDefinitionsRejectedAction())
         });
     }
 }
 
 export function pushDefinition(term, definition) {
-    console.log("term", term)
-    console.log("definition", definition)
     return dispatch => {
-        dispatch(pushDefinitionRequestAction());
+        dispatch(pushDefinitionRequestAction())
         return database.ref('/definitions').push({
             term: term,
             definition: definition
@@ -27,8 +25,22 @@ export function pushDefinition(term, definition) {
             dispatch(pushDefinitionFulfilledAction({definition, term}))
         })
         .catch((error) => {
-            console.log(error);
-            dispatch(pushDefinitionRejected());
+            console.log(error)
+            dispatch(pushDefinitionRejected())
+        })
+    }
+}
+
+export function deleteDefinition(key) {
+    return dispatch => {
+        dispatch(deleteDefinitionRequestAction())
+        return database.ref('/definitions').child(key).remove()
+        .then(() => {
+            dispatch(deleteDefinitionFulfilledAction(key))
+        })
+        .catch((error) => {
+            console.log(error)
+            dispatch(deleteDefinitionRejected())
         })
     }
 }
@@ -48,6 +60,25 @@ function pushDefinitionRejected() {
 function pushDefinitionFulfilledAction(definition) {
     return {
         type: ActionTypes.PushDefinitionFulfilled,
+        definition
+    }
+}
+
+function deleteDefinitionRequestAction() {
+    return {
+        type: ActionTypes.DeleteDefinition
+    }
+}
+
+function deleteDefinitionRejected() {
+    return {
+        type: ActionTypes.DeleteDefinitionRejected
+    }
+}
+
+function deleteDefinitionFulfilledAction(definition) {
+    return {
+        type: ActionTypes.DeleteDefinitionFulfilled,
         definition
     }
 }
