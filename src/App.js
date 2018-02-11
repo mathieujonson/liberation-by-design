@@ -10,8 +10,8 @@ import AdminIndex from './components/Admin/Index'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
 import AdminQuestions from './components/Admin/Questions/index'
-import Dashboard from './components/Admin/Dashboard'
-import AdminDefinitions from './components/Admin/Definitions/Definitions'
+import Dashboard from './components/Admin/AdminNav'
+import AdminDefinitions from './components/Admin/Definitions/index'
 import './styles/main.css'
 
 class App extends Component {

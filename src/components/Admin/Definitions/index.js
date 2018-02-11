@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {NavLink} from 'react-router-dom'
 import {getDefinitions} from '../../../actions/definitions';
+import AdminNav from '../AdminNav'
 
 class AdminDefinitions extends Component {
     componentWillMount() {
@@ -10,7 +10,10 @@ class AdminDefinitions extends Component {
 
     render() {
             return (
-                <h3>Definitions</h3>
+                <div className="page-container">
+                    <AdminNav />
+                </div>
+
         )
     }
 }
