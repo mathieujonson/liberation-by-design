@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import AdminQuestions from './components/Admin/Questions/index'
 import Dashboard from './components/Admin/AdminNav'
 import AdminDefinitions from './components/Admin/Definitions/index'
+import AdminCreateDefinition from './components/Admin/Definitions/forum'
 import './styles/main.css'
 
 class App extends Component {
@@ -29,7 +30,8 @@ class App extends Component {
                             <Route path="/admin/definitions" component={AdminDefinitions} />
                             <Route path="/admin/dashboard" component={Dashboard} />
                             <Route path="/admin/questions" component={AdminQuestions} />
-                            <Route path="/admin" component={AdminIndex} />
+                            <Route path="/admin/create-definition" component={AdminCreateDefinition} />
+                            <Route path="/admin" component={AdminIndex} />                            
                             <Route component={NotFound} />
                         </Switch>
                     </div>
