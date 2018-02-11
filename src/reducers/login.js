@@ -2,14 +2,14 @@ import ActionTypes from '../action-types';
 
 export function login(state = {}, action) {
     switch(action.type) {
-        case ActionTypes.GetLogin: {
+        case ActionTypes.GetLogin: {            
             return Object.assign({}, state, {
                 inProgress: true,
                 error: '',
                 success: '',
             });
         }
-        case ActionTypes.GetLoginRejected: {
+        case ActionTypes.GetLoginRejected: {            
             return Object.assign({}, state, {
                 inProgress: false,
                 error: 'Error in getting login.',
@@ -23,7 +23,7 @@ export function login(state = {}, action) {
                 login: login,
             })
         }
-        default:
+        default:        
             return state;
     }
 }
