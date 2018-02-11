@@ -1,5 +1,16 @@
 .question-container {
+  .row {
+    margin-bottom:1.25px;
+  }
+}
+.questions-container {
   .table {
-    margin-bottom:20px;
+    margin-bottom:1.25em;
+  }
+  td:nth-of-type(1) {
+    width:90%;
+  }
+  td:not(:nth-of-type(1)) {
+    text-align:center;
   }
 }

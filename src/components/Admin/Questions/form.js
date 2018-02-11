@@ -32,6 +32,28 @@ class Questions extends Component {
                             <label htmlFor="description">Description</label>
                             <input type="text" id="description" onChange={this.handleChange()} />
                         </div>
+                        <div className="row">
+                            <div className="col">
+                                <div className="form-group">
+                                    <label htmlFor="skill">Skill</label>
+                                    <select type="text" id="skill" className="form-control" onChange={this.handleChange()}>
+                                        <option value="easy">Beginner</option>
+                                        <option value="moderate">Moderate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="form-group">
+                                    <label htmlFor="points">Points</label>
+                                    <select type="text" id="points" className="form-control" onChange={this.handleChange()}>
+                                        <option value="1">Beginner</option>
+                                        <option value="2">Moderate</option>
+                                        <option value="3">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                     <button className="button">Save</button>
                 </div>
