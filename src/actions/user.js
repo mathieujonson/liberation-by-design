@@ -17,7 +17,7 @@ export function addUser(questions) {
             id: userId,
             questions: reducedArrayOfKeys,
             answers: [],
-            score: 20,
+            score: 0,
             survey: 'yes'
         }
 
