@@ -23,8 +23,17 @@ class Definitions extends Component {
         else if(term === 'Diversity') {
             colorClass = 'green'
         }
-        else {
+        else if(term === 'Inclusion') {
             colorClass = 'pink'
+        }
+        else if(term === 'Design') {
+            colorClass = 'purple'
+        }
+        else if(term === 'Liberation') {
+            colorClass = 'light-gray'
+        }
+        else if(term === 'Liberation by Design') {
+            colorClass = 'orange'
         }
         return (
             <li><strong className={colorClass}>{term}</strong>: {definition}</li>
