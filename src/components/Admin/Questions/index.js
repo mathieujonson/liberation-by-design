@@ -17,7 +17,6 @@ class Questions extends Component {
     }
 
     renderRow(question, index) {
-        console.log(index)
         return (
             <tr key={index}>
                 <td>{question.question}</td>
