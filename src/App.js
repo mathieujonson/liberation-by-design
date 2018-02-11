@@ -31,6 +31,7 @@ class App extends Component {
                             <Route path="/admin/questions/new" component={AdminQuestionsForm} />
                             <Route path="/admin/questions" component={AdminQuestions} />
                             <Route path="/admin/definitions/new" component={AdminCreateDefinition} />
+                            <Route path="/admin/definitions/edit" component={AdminCreateDefinition} />
                             <Route path="/admin/definitions" component={AdminDefinitions} />
                             <Route path="/admin" component={AdminIndex} />
                             <Route component={NotFound} />

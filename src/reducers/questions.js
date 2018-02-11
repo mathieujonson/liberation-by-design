@@ -23,6 +23,38 @@ export function questions(state = {}, action) {
                 questions: questions,
             })
         }
+        case ActionTypes.PushQuestion: {
+            return Object.assign({}, state, {
+                inProgress: true,
+                error: '',
+                success: '',
+            });
+        }
+        case ActionTypes.PushQuestionRejected: {
+            return Object.assign({}, state, {
+                inProgress: false,
+                error: 'Error pushing new question to database.'
+            })
+        }
+        case ActionTypes.PushQuestionFulfilled: {
+            const question = action.question
+            return Object.assign({}, state, {
+                inProgress: false,
+                success: 'Inserted definition.',
+                questions: [...state.questions, ...question],
+            })
+        }
+        case ActionTypes.DeleteQuestionFulfilled: {
+            const key = action.key,
+                newState = Object.assign({}, state)
+
+            delete newState.questions[key]
+
+            return Object.assign({}, newState, {
+                inProgress: false,
+                success: 'Inserted definition.',
+            })
+        }
         default:
             return state;
     }
