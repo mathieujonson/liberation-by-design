@@ -1,5 +1,5 @@
 const ActionTypes = {
-    FlashMessage:            'FLASH_MESSAGE',
+    FlashMessage:               'FLASH_MESSAGE',
 
     GetDefinitions:          'GET_DEFINITIONS',
     GetDefinitionsRequested: 'GET_DEFINITIONS_REQUESTED',

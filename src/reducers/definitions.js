@@ -37,11 +37,12 @@ export function definitions(state = {}, action) {
             })
         }
         case ActionTypes.PushDefinitionFulfilled: {
-            const definitions = action.definitions
+            const definitions = action.definition
+            console.log("say what", definitions)
             return Object.assign({}, state, {
                 inProgress: false,
                 success: 'Inserted definition.',
-                definitions: definitions,
+                definitions: [...state.definitions, ...definitions],
             })
         }
         default:

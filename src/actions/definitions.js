@@ -6,7 +6,6 @@ export function getDefinitions() {
         dispatch(getDefinitionsRequestedAction());
         return database.ref(`/definitions`).once('value', snap => {
             const definitions = snap.val();
-            console.log(definitions)
             dispatch(getDefinitionsFulfilledAction(definitions))
         }).catch((error) => {
             console.log(error);
@@ -15,35 +14,41 @@ export function getDefinitions() {
     }
 }
 
-export function pushNewDefinition(term, definition) {
+export function pushDefinition(term, definition) {
+    console.log("term", term)
+    console.log("definition", definition)
     return dispatch => {
-        dispatch(pushNewDefinitionRequestAction());
-        return database.ref('/definitions').set({
+        dispatch(pushDefinitionRequestAction());
+        return database.ref('/definitions').push({
             term: term,
             definition: definition
-        }).catch((error) => {
+        })
+        .then(() => {
+            dispatch(pushDefinitionFulfilledAction({definition, term}))
+        })
+        .catch((error) => {
             console.log(error);
-            dispatch(pushNewDefinitionRejectedAction());
+            dispatch(pushDefinitionRejected());
         })
     }
 }
 
-function pushNewDefinitionRequestAction() {
+function pushDefinitionRequestAction() {
     return {
-        type: ActionTypes.PushNewDefinition
+        type: ActionTypes.PushDefinition
     }
 }
 
-function pushNewDefinitionRejectedAction() {
+function pushDefinitionRejected() {
     return {
-        type: ActionTypes.PushNewDefinitionRejected
+        type: ActionTypes.PushDefinitionRejected
     }
 }
 
-function PushDefinitionsFulfilledAction(definitions) {
+function pushDefinitionFulfilledAction(definition) {
     return {
         type: ActionTypes.PushDefinitionFulfilled,
-        definitions
+        definition
     }
 }
 

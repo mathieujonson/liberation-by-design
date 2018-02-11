@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getDefinitions, pushNewDefinition} from '../../../actions/definitions';
+import {getDefinitions, pushDefinition} from '../../../actions/definitions';
 import AdminNav from '../AdminNav'
 
 class AdminDefinitions extends Component {
     componentWillMount() {
-        this.props.pushNewDefinition()
         document.title = 'New Definition - Admin'
     }   
     
@@ -24,8 +23,8 @@ class AdminDefinitions extends Component {
           });
     }
 
-    handleSubmit = event => {        
-        this.props.pushNewDefinition(this.state.term, this.state.definition)  
+    handleSubmit = event => {
+        this.props.pushDefinition(this.state.term, this.state.definition)
     }
 
     render() {        
@@ -60,7 +59,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        pushNewDefinition: (term, definition) => dispatch(pushNewDefinition(term, definition))
+        pushDefinition: (term, definition) => dispatch(pushDefinition(term, definition))
     };
 }
 
