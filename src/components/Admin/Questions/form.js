@@ -5,13 +5,26 @@ import AdminNav from '../AdminNav'
 
 
 class Questions extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     componentWillMount() {
         this.props.getQuestions()
         document.title = 'New Question - Admin'
     }
 
-    handleChange() {
+    handleChange(event) {
+        this.setState({[event.target.id] : event.target.value});
+    }
 
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state);
+        event.preventDefault();
     }
 
     render() {

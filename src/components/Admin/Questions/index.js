@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {getQuestions} from '../../../actions/questions';
-
 import AdminNav from '../AdminNav'
 
 
@@ -18,11 +17,12 @@ class Questions extends Component {
     }
 
     renderRow(question, index) {
+        console.log(index)
         return (
             <tr key={index}>
                 <td>{question.question}</td>
-                <td><i className="material-icons" onClick={this.handleClick(question.question, 'edit')}>mode_edit</i></td>
-                <td><i className="material-icons" onClick={this.handleClick(question.question, 'delete')}>delete</i></td>
+                <td><i className="material-icons" onClick={this.handleClick}>mode_edit</i></td>
+                <td><i className="material-icons" onClick={this.handleClick}>delete</i></td>
             </tr>
         )
     }
@@ -30,9 +30,9 @@ class Questions extends Component {
     render() {
         let rows = ''
         if(Object.keys(this.props.questions).length > 0) {
-            rows = this.props.questions.questions.map((question, index) => {
+            rows = Object.keys(this.props.questions.questions).map((question, index) => {
                 return (
-                    this.renderRow(question, index)
+                    this.renderRow(this.props.questions.questions[question], question, index)
                 )
             })
         }
@@ -42,8 +42,7 @@ class Questions extends Component {
                 <AdminNav />
                 <div className="questions-container table-responsive">
                     <table className="table table-striped">
-                        <tbody>
-                            <tr>
+                        <tbody><tr>
                                 <td>Question</td>
                                 <td>Edit</td>
                                 <td>Delete</td>

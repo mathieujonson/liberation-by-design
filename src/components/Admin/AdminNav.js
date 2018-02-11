@@ -6,8 +6,8 @@ class AdminNav extends Component {
     render() {
         return (
             <nav className="admin-nav">
-                <NavLink exact to="/admin/questions" activeClassName="active">Questions</NavLink>
-                <NavLink exact to="/admin/definitions" activeClassName="active">Definitions</NavLink>
+                <NavLink exact to="/admin/questions:placeholder" activeClassName="active">Questions</NavLink>
+                <NavLink exact to="/admin/definitions:placeholder" activeClassName="active">Definitions</NavLink>
             </nav>
         )
     }
