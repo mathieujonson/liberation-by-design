@@ -5,5 +5,56 @@
   padding:30px;
   margin-top:20px;
   border-top:1px solid #000;
-  margin-top: 20px;
+  flex-direction: column;
+  //width: 650px;
+}
+
+.footer-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1em;
+  margin: 0 20px;
+
+  a{
+    //color: red;
+    color: #878787;
+    //color: rgba(135, 135, 135, 0.5);
+    font-family: Poppins, system-ui, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: .18em;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+  }
+  a:hover {
+    //color: #878787;
+    color: rgba(112,112,112,.5);
+
+  }
+}
+
+.copyright {
+  text-align: center;
+  color: #525252;
+  margin: 10px;
+}
+
+.media-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 17px 0;
+}
+
+.fa-facebook {
+  //background: #3B5998;
+  color: #3B5998;
+}
+
+.media-buttons a {
+  text-decoration: none;
 }
