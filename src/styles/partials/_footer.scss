@@ -51,8 +51,10 @@
 }
 
 .fa-facebook {
-  //background: #3B5998;
-  color: #3B5998;
+  color:#000;
+  &:hover {
+    color: #3B5998;
+  }
 }
 
 .media-buttons a {
