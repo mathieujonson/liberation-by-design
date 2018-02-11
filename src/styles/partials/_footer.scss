@@ -8,7 +8,8 @@
   padding:30px;
   border-top:1px solid #000;
   flex-direction: column;
-
+  margin: 0 30px;
+  //width: 650px;
 }
 
 .footer-buttons{
@@ -18,10 +19,10 @@
   padding-right: 1em;
   margin: 0 20px;
 
-
-
   a{
-    color: rgba(135, 135, 135, 0.5);
+    //color: red;
+    color: #878787;
+    //color: rgba(135, 135, 135, 0.5);
     font-family: Poppins, system-ui, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -37,16 +38,6 @@
     color: rgba(112,112,112,.5);
 
   }
-  //color: rgba(112,112,112,.5);
-  //font-family: Poppins, system-ui, sans-serif;
-  //font-weight: 700;
-  //font-style: normal;
-  //font-size: 10px;
-  //letter-spacing: .18em;
-  //line-height: 1.8em;
-  //text-transform: uppercase;
-  //margin: 0px 20px 0px 20px;
-
 }
 
 .copyright {
@@ -59,4 +50,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 17px 0;
+}
+
+.fa-facebook {
+  //background: #3B5998;
+  color: #3B5998;
+}
+
+.media-buttons a {
+  text-decoration: none;
 }
