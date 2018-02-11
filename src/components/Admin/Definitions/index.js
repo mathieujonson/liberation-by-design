@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getDefinitions} from '../../../actions/definitions';
 import AdminNav from '../AdminNav'
+import {Link} from 'react-router-dom'
 
 class AdminDefinitions extends Component {
     componentWillMount() {
@@ -31,11 +32,10 @@ class AdminDefinitions extends Component {
         }
 
             return (
-                
-                <div className="admin-deffinitions">
                 <div className="page-container">
                     <AdminNav />
-                </div>
+                <div className="admin-deffinitions">                
+                
                     <h3>Definitions</h3>   
                     <table className="table table-striped">
                     <tbody>
@@ -48,9 +48,9 @@ class AdminDefinitions extends Component {
                         {list}
                     </tbody>
                 </table>
+                <Link to='/admin/create-definition' className="button">New</Link>
                 </div>
-                
-
+                </div>
         )
     }
 }
