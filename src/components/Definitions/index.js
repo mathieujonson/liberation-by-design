@@ -12,8 +12,31 @@ class Definitions extends Component {
     }
 
     renderList(definition, term) {
+        let colorClass = ''
+
+        if(term === 'Equity') {
+            colorClass = 'blue'
+        }
+        else if(term === 'Equality') {
+            colorClass = 'orange'
+        }
+        else if(term === 'Diversity') {
+            colorClass = 'green'
+        }
+        else if(term === 'Inclusion') {
+            colorClass = 'pink'
+        }
+        else if(term === 'Design') {
+            colorClass = 'purple'
+        }
+        else if(term === 'Liberation') {
+            colorClass = 'light-gray'
+        }
+        else if(term === 'Liberation by Design') {
+            colorClass = 'orange'
+        }
         return (
-            <li><strong>{term}</strong>: {definition}</li>
+            <li><strong className={colorClass}>{term}</strong>: {definition}</li>
         )
     }
 
@@ -22,7 +45,6 @@ class Definitions extends Component {
 
         if(Object.keys(this.props.definitions).length > 0) {
             list = Object.keys(this.props.definitions.definitions).map((definition) => {
-                console.log(this.props.definitions.definitions[definition])
                 return (
                     this.renderList(this.props.definitions.definitions[definition].definition, this.props.definitions.definitions[definition].term)
                 )

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../../actions/questions';
+import {getQuestions, deleteQuestion} from '../../../actions/questions';
 import AdminNav from '../AdminNav'
 
 
@@ -11,17 +11,25 @@ class Questions extends Component {
         document.title = 'Questions - Admin'
     }
 
-    handleClick(question, actionType = 'edit') {
-        console.log("question", question);
-        console.log("actionType", actionType)
+    handleEdit(key) {
+        console.log(key)
+        return
+        this.props.editQuestion(key)
     }
 
-    renderRow(question, index) {
+    handleDelete(key) {
+        console.log(key)
+        return
+        this.props.deleteQuestion(key)
+    }
+
+    renderRow(question, key) {
+        console.log("render key", key);
         return (
-            <tr key={index}>
+            <tr key={key}>
                 <td>{question.question}</td>
-                <td><i className="material-icons" onClick={this.handleClick}>mode_edit</i></td>
-                <td><i className="material-icons" onClick={this.handleClick}>delete</i></td>
+                <td><i className="material-icons" onClick={(key) => {this.handleEdit(key)}}>mode_edit</i></td>
+                <td><i className="material-icons" onClick={(key) => {this.handleDelete(key)}}>delete</i></td>
             </tr>
         )
     }
@@ -30,8 +38,9 @@ class Questions extends Component {
         let rows = ''
         if(Object.keys(this.props.questions).length > 0) {
             rows = Object.keys(this.props.questions.questions).map((question, index) => {
+                let key = Object.keys(this.props.questions.questions)[index]
                 return (
-                    this.renderRow(this.props.questions.questions[question], question, index)
+                    this.renderRow(this.props.questions.questions[question], key)
                 )
             })
         }
@@ -64,7 +73,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getQuestions: () => dispatch(getQuestions())
+        getQuestions: () => dispatch(getQuestions()),
+        deleteQuestion: (key) => dispatch(deleteQuestion(key))
     };
 }
 

@@ -21,6 +21,16 @@ const ActionTypes = {
     GetQuestionsRejected:      'GET_QUESTIONS_REJECTED',
     GetQuestionsFulfilled:     'GET_QUESTIONS_FULFILLED',
 
+    PushQuestion:              'PUSH_QUESTION',
+    PushQuestionRequested:     'PUSH_QUESTION_REQUESTED',
+    PushQuestionRejected:      'PUSH_QUESTION_REJECTED',
+    PushQuestionFulfilled:     'PUSH_QUESTION_FULFILLED',
+
+    DeleteQuestion:            'PUSH_QUESTION',
+    DeleteQuestionRequested:   'PUSH_QUESTION_REQUESTED',
+    DeleteQuestionRejected:    'PUSH_QUESTION_REJECTED',
+    DeleteQuestionFulfilled:   'PUSH_QUESTION_FULFILLED',
+
     GetLogin:                  'GET_LOGIN',
     GetLoginRequested:         'GET_LOGIN_REQUESTED',
     GetLoginRejected:          'GET_LOGIN_REJECTED',
@@ -42,6 +52,11 @@ const ActionTypes = {
     UpdateUserFulfilled:       'UPDATE_USER_FULFILLED',
 
     UpdateQuestion: 'UPDATE_QUESTION',
+    
+    GetDefinition:            'GET_DEFINITION',
+    GetDefinitionRequested:   'GET_DEFINITION_REQUESTED',
+    GetDefinitionRejected:    'GET_DEFINITION_REJECTED',
+    GetDefinitionFulfilled:   'GET_DEFINITION_FULFILLED',
 };
 
 export default ActionTypes;

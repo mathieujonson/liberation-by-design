@@ -55,6 +55,27 @@ export function definitions(state = {}, action) {
                 success: 'Inserted definition.',
             })
         }
+        case ActionTypes.GetDefinition: {
+            return Object.assign({}, state, {
+                inProgress: true,
+                error: '',
+                success: '',
+            });
+        }
+        case ActionTypes.GetDefinitionFulfilled: {
+            const definition = action.definition
+            return Object.assign({}, state, {
+                inProgress: false,
+                success: 'Got definition.',
+                definition: definition,
+            })
+        }
+        case ActionTypes.GetDefinitionRejected: {
+            return Object.assign({}, state, {
+                inProgress: false,
+                error: 'Error in getting definitions.',
+            });
+        }
         default:
             return state;
     }

@@ -60,9 +60,9 @@ class Questions extends Component {
                                 <div className="form-group">
                                     <label htmlFor="points">Points</label>
                                     <select type="text" id="points" className="form-control" onChange={this.handleChange}>
-                                        <option value="1">Beginner</option>
-                                        <option value="2">Moderate</option>
-                                        <option value="3">Advanced</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
                                 </div>
                             </div>
