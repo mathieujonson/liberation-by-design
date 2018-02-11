@@ -21,36 +21,36 @@ class AdminDefinitions extends Component {
     }
 
     render() {
-        let list = ''
+        let rows = ''
 
         if(Object.keys(this.props.definitions).length > 0) {
-            list = this.props.definitions.definitions.map((definition, index) => {
+            rows = Object.keys(this.props.definitions.definitions).map((definition, index) => {
                 return (
-                    this.renderRow(definition, index)
+                    this.renderRow(this.props.definitions.definitions[definition], definition, index)
                 )
             })
         }
 
-            return (
-                <div className="page-container">
-                    <AdminNav />
-                <div className="admin-deffinitions">                
-                
-                    <h3>Definitions</h3>   
-                    <table className="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td>Term</td>
-                            <td>Definition</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
-                        </tr>
-                        {list}
-                    </tbody>
-                </table>
-                <Link to='/admin/create-definition' className="button">New</Link>
-                </div>
-                </div>
+        return (
+            <div className="page-container">
+                <AdminNav />
+            <div className="admin-deffinitions">
+
+                <h3>Definitions</h3>
+                <table className="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Term</td>
+                        <td>Definition</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    {rows}
+                </tbody>
+            </table>
+            <Link to='/admin/definitions/new' className="button">New</Link>
+            </div>
+            </div>
         )
     }
 }
