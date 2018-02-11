@@ -9,7 +9,7 @@ const store = createStore(rootReducer,
     {
         definitions: {},
         questions: {},
-        users: {}
+        user: {}
     },
     applyMiddleware(thunk, logger)
 );

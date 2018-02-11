@@ -1,26 +1,26 @@
 import ActionTypes from '../action-types';
 
-export function users(state = {}, action) {
+export function user(state = {}, action) {
     switch(action.type) {
-        case ActionTypes.GetUsers: {
+        case ActionTypes.AddUser: {
             return Object.assign({}, state, {
                 inProgress: true,
                 error: '',
                 success: '',
             });
         }
-        case ActionTypes.GetUsersRejected: {
+        case ActionTypes.AddUserRejected: {
             return Object.assign({}, state, {
                 inProgress: false,
-                error: 'Error in getting users.',
+                error: 'Error in adding user.',
             });
         }
-        case ActionTypes.GetUsersFulfilled: {
-            const users = action.users
+        case ActionTypes.AddUserFulfilled: {
+            const userData = action.userData
             return Object.assign({}, state, {
+                ...userData,
                 inProgress: false,
-                success: 'Got users.',
-                users: users,
+                success: 'Added user.',
             })
         }
         default:

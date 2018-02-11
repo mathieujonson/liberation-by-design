@@ -20,6 +20,11 @@ const ActionTypes = {
     GetUsersRequested: 'GET_USERS_REQUESTED',
     GetUsersRejected: 'GET_USERS_REJECTED',
     GetUsersFulfilled: 'GET_USERS_FULFILLED',
+
+    AddUser:   'ADD_USER',
+    AddUserRequested: 'ADD_USER_REQUESTED',
+    AddUserRejected: 'ADD_USER_REJECTED',
+    AddUserFulfilled: 'ADD_USER_FULFILLED',
 };
 
 export default ActionTypes;
