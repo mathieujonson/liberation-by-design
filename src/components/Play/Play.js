@@ -37,7 +37,6 @@ class Play extends Component {
       <div className="play-container">
           <div className="score">score:</div>
           <div className="question">
-            <div className="question__index">question:</div>
             <Questions />
           </div>
       </div>
