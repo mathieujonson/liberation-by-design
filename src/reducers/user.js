@@ -23,6 +23,27 @@ export function user(state = {}, action) {
                 success: 'Added user.',
             })
         }
+        case ActionTypes.UpdateUser: {
+            return Object.assign({}, state, {
+                inProgress: true,
+                error: '',
+                success: '',
+            });
+        }
+        case ActionTypes.UpdateUserRejected: {
+            return Object.assign({}, state, {
+                inProgress: false,
+                error: 'Error in adding user.',
+            });
+        }
+        case ActionTypes.UpdateUserFulfilled: {
+            const userData = action.userData
+            return Object.assign({}, state, {
+                ...userData,
+                inProgress: false,
+                success: 'Updated user.',
+            })
+        }
         default:
             return state;
     }

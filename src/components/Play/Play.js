@@ -29,12 +29,16 @@ class Play extends Component {
 
   render() {
 
+    if(typeof this.props.userInProgress == 'undefined' || this.props.userInProgress) {
+      return (<div>waiting</div>)
+    }
+
     return (
       <div className="play-container">
           <div className="score">score:</div>
           <div className="question">
             <div className="question__index">question:</div>
-            {/* <Questions /> */}
+            <Questions />
           </div>
       </div>
     )
@@ -46,7 +50,8 @@ function mapStateToProps(state) {
         questions: state.questions,
         user: state.user,
         state: state,
-        questionsInProgress: state.questions.inProgress
+        questionsInProgress: state.questions.inProgress,
+        userInProgress: state.user.inProgress
     };
 }
 

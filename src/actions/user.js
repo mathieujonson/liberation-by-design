@@ -6,7 +6,7 @@ export function addUser(questions) {
     let reducedArrayOfKeys = []
 
     Object.keys(questions).forEach( (key) => {
-        if (questions[key].skill.toLowerCase() == 'moderate') reducedArrayOfKeys.push(key) 
+        if (questions[key].skill.toLowerCase() === 'moderate') reducedArrayOfKeys.push(key) 
     })
     
     return dispatch => {
@@ -49,6 +49,57 @@ function addUserRejectedAction() {
 function addUserFulfilledAction(userData) {
     return {
         type: ActionTypes.AddUserFulfilled,
+        userData
+    }
+}
+
+export function updateUser(questions) {
+    let reducedArrayOfKeys = []
+
+    Object.keys(questions).forEach( (key) => {
+        if (questions[key].skill.toLowerCase() === 'moderate') reducedArrayOfKeys.push(key) 
+    })
+    
+    return dispatch => {
+        dispatch(updateUserRequestedAction());
+        let userId = database.ref().child('users').push().key
+
+        let userData = {
+            id: userId,
+            questions: reducedArrayOfKeys,
+            answers: [],
+            score: 20,
+            survey: 'yes'
+        }
+
+        let updates = {}
+        updates['/users/' + userId] = userData
+        database.ref().update(updates)
+        .then(
+        () => {
+            dispatch(updateUserFulfilledAction(userData)) 
+        }, 
+        () => {
+            dispatch(updateUserRejectedAction())
+        })
+    }
+}
+
+function updateUserRequestedAction() {
+    return {
+        type: ActionTypes.UpdateUserRequested
+    }
+}
+
+function updateUserRejectedAction() {
+    return {
+        type: ActionTypes.UpdateUserRejected
+    }
+}
+
+function updateUserFulfilledAction(userData) {
+    return {
+        type: ActionTypes.UpdateUserFulfilled,
         userData
     }
 }

@@ -6,13 +6,13 @@ import {getQuestions} from '../../actions/questions'
 
 class Questions extends Component {
     componentWillMount() {
-        this.props.getQuestions().then(
-        onFulfilled => {
-            console.log('***success*** ', onFulfilled)
-        }, 
-        onRejected => {
-            console.log('***failure*** ', onRejected)
-        })
+        // this.props.getQuestions().then(
+        // onFulfilled => {
+        //     console.log('***success*** ', onFulfilled)
+        // }, 
+        // onRejected => {
+        //     console.log('***failure*** ', onRejected)
+        // })
     }
 
     componentDidMount() {
@@ -20,20 +20,9 @@ class Questions extends Component {
     }
 
     render() {
-        // let list = ''
-        let questionMarkup = ''
+        let question = this.props.questions.questions[this.props.user.questions[0]]
 
-        if(Object.keys(this.props.questions).length > 0) {
-            let question = this.props.questions.questions[1] 
-            // console.log('*******', question)
-            // list = this.props.questions.questions.map((question, index) => {
-                // return (
-            questionMarkup = <li><strong>{question.term}</strong>{question.question}</li>
-                // )
-            // })
-        }
-
-        // console.log(list)
+        let questionMarkup = <li>{question.question}</li>
 
         return (
             <div className="our-questions-container">
@@ -49,6 +38,7 @@ class Questions extends Component {
 function mapStateToProps(state) {
     return {
         questions: state.questions,
+        user: state.user,
         state: state,
         inProgress: state.questions.inProgress
     };
