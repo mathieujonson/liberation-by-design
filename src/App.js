@@ -5,6 +5,7 @@ import Home from './components/Home/index'
 import HowToPlay from './components/HowToPlay/index'
 import Definitions from './components/Definitions/index'
 import Play from './components/Play/Play'
+import Summary from './components/Play/Summary'
 import AdminIndex from './components/Admin/Index'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
@@ -27,6 +28,7 @@ class App extends Component {
                             <Route path="/how-to-play" component={HowToPlay} />
                             <Route path="/our-definitions" component={Definitions} />
                             <Route path="/play" component={Play} />
+                            <Route path="/summary" component={Summary} />
                             <Route path="/admin/dashboard" component={Dashboard} />
                             <Route path="/admin/questions/new" component={AdminQuestionsForm} />
                             <Route path="/admin/questions" component={AdminQuestions} />
