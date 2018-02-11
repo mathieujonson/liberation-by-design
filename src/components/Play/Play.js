@@ -34,11 +34,11 @@ class Play extends Component {
     }
 
     return (
-      <div className="play-container">
-          <div className="score">score:</div>
-          <div className="question">
-            <Questions />
-          </div>
+      <div className="game-wrapper">
+        <div className="scoreboard">
+          <p>score: {this.props.user.score}</p>
+        </div>
+        <Questions />
       </div>
     )
   }
