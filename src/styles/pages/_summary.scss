@@ -1,0 +1,43 @@
+.summary {
+    > div {
+        margin-bottom:20px;
+    }
+    &__text {
+        text-align:center;
+    }
+    &__scores {
+        ol {
+            list-style-type:decimal;
+            margin:0 0 0 30px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap:wrap;
+            max-height: 140px;
+        }
+        li {
+            margin:0 0 10px;
+            padding-left:10px;
+        }
+    }
+    &__points {
+        font-size:12px;
+        &::before {
+            content:'(';
+        }
+        &::after {
+            content:')';
+        }
+    }
+    .fa {
+        width:16px;
+        &-times {
+            color:$pink;
+        }
+        &-check {
+            color:$green;
+        }
+    }
+    &__share {
+        text-align:center;
+    }
+}
