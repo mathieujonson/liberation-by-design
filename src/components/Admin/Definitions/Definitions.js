@@ -6,20 +6,54 @@ import {getDefinitions} from '../../../actions/definitions';
 class AdminDefinitions extends Component {
     componentWillMount() {
         this.props.getDefinitions()
+    }   
+
+    renderRow(definition, index) {
+        return (
+            <tr key={index}>
+                <td>{definition.term}</td>
+                <td>{definition.definition}</td>
+                <td><i className="material-icons">mode_edit</i></td>
+                <td><i className="material-icons">delete</i></td>
+            </tr>
+        )
     }
 
     render() {
+        let list = ''
+
+        if(Object.keys(this.props.definitions).length > 0) {
+            list = this.props.definitions.definitions.map((definition, index) => {
+                return (
+                    this.renderRow(definition, index)
+                )
+            })
+        }
+
             return (
-                <h3>Definitions</h3>
+                <div className="admin-deffinitions">
+                    <h3>Definitions</h3>   
+                    <table className="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Term</td>
+                            <td>Definition</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                        {list}
+                    </tbody>
+                </table>
+                </div>
         )
     }
 }
 
 function mapStateToProps(state) {
     return {
-        // definitions: state.definitions,
-        // state: state,
-        // inProgress: state.definitions.inProgress
+        definitions: state.definitions,
+        state: state,
+        inProgress: state.definitions.inProgress
     };
 }
 
