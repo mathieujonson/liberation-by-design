@@ -3,11 +3,18 @@ import ActionTypes from '../action-types';
 import {database} from './database';
 
 export function addUser(questions) {
-    let reducedArrayOfKeys = []
+    let reducedObjOfKeys = {}
 
     Object.keys(questions).forEach( (key) => {
-        if (questions[key].skill.toLowerCase() === 'moderate') reducedArrayOfKeys.push(key) 
+        if (questions[key].skill.toLowerCase() === 'moderate') {
+            reducedObjOfKeys[key] = {
+                points: 0,
+                correct: false
+            }
+        }
     })
+
+    console.log('888888', reducedObjOfKeys)
     
     return dispatch => {
         dispatch(addUserRequestedAction());
@@ -15,9 +22,9 @@ export function addUser(questions) {
 
         let userData = {
             id: userId,
-            questions: reducedArrayOfKeys,
+            questions: reducedObjOfKeys,
             answers: [],
-            score: 20,
+            score: 0,
             survey: 'yes'
         }
 
