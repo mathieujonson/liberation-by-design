@@ -1,12 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getQuestions} from '../../actions/questions';
+import {getQuestions} from '../../actions/questions'
 
 
 class Questions extends Component {
     componentWillMount() {
-        this.props.getQuestions()
+        // this.props.getQuestions().then(
+        // onFulfilled => {
+        //     console.log('***success*** ', onFulfilled)
+        // }, 
+        // onRejected => {
+        //     console.log('***failure*** ', onRejected)
+        // })
     }
 
     componentDidMount() {
@@ -14,25 +20,16 @@ class Questions extends Component {
     }
 
     render() {
-        let list = ''
+        let question = this.props.questions.questions[this.props.user.questions[0]]
 
-        if(Object.keys(this.props.questions).length > 0) {
-            list = this.props.questions.questions.map((question, index) => {
-                return (
-                    <li key={index}><strong>{question.term}</strong>: {question.question}</li>
-                )
-            })
-        }
-
-        console.log(list)
+        let questionMarkup = <li>{question.question}</li>
 
         return (
             <div className="our-questions-container">
-                <h1>Our Questions</h1>
                 <ul>
-                    {list}
+                    {questionMarkup}
                 </ul>
-                <Link to='/play' className="button">Let's Play!</Link>
+                <Link to='/play' className="button">Submit</Link>
             </div>
         )
     }
@@ -41,6 +38,7 @@ class Questions extends Component {
 function mapStateToProps(state) {
     return {
         questions: state.questions,
+        user: state.user,
         state: state,
         inProgress: state.questions.inProgress
     };
@@ -52,4 +50,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+export default connect(mapStateToProps, mapDispatchToProps)(Questions)

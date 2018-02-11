@@ -22,7 +22,7 @@ class Definitions extends Component {
             })
         }
 
-        console.log(list)
+        // console.log(list)
 
         return (
             <div className="our-definitions-container">

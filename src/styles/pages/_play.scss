@@ -3,3 +3,17 @@
   flex-direction:column;
   justify-content:center;
 }
+
+.score {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.question {
+  max-width: 50%;
+  margin: 0 auto;
+  &__index {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
