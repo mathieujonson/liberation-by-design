@@ -22,7 +22,7 @@ export default (props) => (
         <section className="social-media">
             <ul className="media-buttons">
                 <li><a href="https://www.facebook.com/CreativeReactionLab
-">facebook</a></li>
+" >facebook</a></li>
                 <li><a href="https://twitter.com/CreativeRxlab">twitter</a></li>
                 {/*https://twitter.com/CreativeRxlab*/}
                 <li><a href="https://www.linkedin.com/company/creative-reaction-lab">linked in</a></li>
